@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 function App() {
-  return ( 
+  return (
     <div className="App">
       <header className="App-header">
         <p>
@@ -9,7 +9,7 @@ function App() {
         </p>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
