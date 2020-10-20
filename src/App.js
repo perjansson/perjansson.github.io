@@ -1,15 +1,8 @@
 import React from 'react'
+import HomePage from './pages/HomePage'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
-  )
+  return <HomePage />
 }
 
 export default App
