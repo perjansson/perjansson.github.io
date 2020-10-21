@@ -29,7 +29,11 @@ const Header = ({ children }) => {
           variant="large"
           color="var(--primary-header-color)"
           marginLeft="auto"
-          glowColor="var(--primary-header-glow-color)"
+          textAlign="center"
+          glowColors={[
+            'var(--primary-header-primary-glow-color)',
+            'var(--primary-header-secondary-glow-color)',
+          ]}
           pulse
         >
           {children}
