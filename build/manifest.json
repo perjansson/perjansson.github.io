@@ -1,0 +1,8 @@
+{
+  "short_name": "Per Jansson",
+  "name": "Web site about Per Jansson - Fullstack Web Developer 😎",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
