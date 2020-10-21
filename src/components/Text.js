@@ -7,7 +7,8 @@ import {
   flexbox,
   variant,
 } from 'styled-system'
-import { oneOf } from 'prop-types'
+import { oneOf, bool, string } from 'prop-types'
+
 import { generateSizes } from '../util/responsiveHelper'
 
 const VARIANTS_BASE = {
@@ -16,6 +17,10 @@ const VARIANTS_BASE = {
 }
 
 const Text = styled('div')(
+  {
+    textShadow: ({ glowColor }) =>
+      `0 0 10px #fff, 0 0 20px #fff, 0 0 30px ${glowColor}, 0 0 40px ${glowColor}, 0 0 50px ${glowColor}, 0 0 60px ${glowColor}, 0 0 70px ${glowColor}`,
+  },
   space,
   layout,
   color,
@@ -35,6 +40,8 @@ const Text = styled('div')(
 
 Text.propTypes = {
   variant: oneOf(['medium', 'large']),
+  glowColor: string,
+  pulse: bool,
 }
 
 Text.defaultProps = {

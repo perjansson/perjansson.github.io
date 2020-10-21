@@ -13,12 +13,13 @@ const Header = ({ children }) => {
       elem.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
     )
   }
+
   return (
     <header>
       <Box
         width={1}
         minWidth={350}
-        height={generateSizes(60)}
+        height={generateSizes(120, 1.1)}
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -28,6 +29,8 @@ const Header = ({ children }) => {
           variant="large"
           color="var(--primary-header-color)"
           marginLeft="auto"
+          glowColor="var(--primary-header-glow-color)"
+          pulse
         >
           {children}
         </Text>

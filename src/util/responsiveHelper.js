@@ -1,6 +1,4 @@
 const RESPONSIVE_FACTOR = 1.3
 
-export const generateSizes = size =>
-  Array.from(Array(4)).map(
-    (_v, i) => size * Math.max(1, i * RESPONSIVE_FACTOR - i + 1)
-  )
+export const generateSizes = (size, factor = RESPONSIVE_FACTOR) =>
+  Array.from(Array(4)).map((_v, i) => size * Math.max(1, i * factor - i + 1))
