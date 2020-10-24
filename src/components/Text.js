@@ -7,7 +7,7 @@ import {
   flexbox,
   variant,
 } from 'styled-system'
-import { oneOf, string, bool } from 'prop-types'
+import { oneOf, string, bool, arrayOf } from 'prop-types'
 
 import { generateSizes } from '../util/responsiveHelper'
 
@@ -58,7 +58,7 @@ const Text = styled.div`
 
 Text.propTypes = {
   variant: oneOf(['medium', 'large']),
-  glowColors: string,
+  glowColors: arrayOf(string),
   pulse: bool,
 }
 
