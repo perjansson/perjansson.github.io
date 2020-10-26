@@ -1,6 +1,5 @@
 {
   "name": "perjansson.github.io-v2",
-  "homepage": "http://perjansson.github.io/build",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
