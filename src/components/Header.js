@@ -34,7 +34,7 @@ const Header = ({ children }) => {
             'var(--primary-header-primary-glow-color)',
             'var(--primary-header-secondary-glow-color)',
           ]}
-          pulse
+          pulse={false}
         >
           {children}
         </Text>
