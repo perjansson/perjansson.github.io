@@ -1,10 +1,11 @@
-name: Deployment
+name: Build, Deploy, Lighthouse
 on:
   push:
     branches:
       - main
 jobs:
   deploy:
+    name: Build, Deploy
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,3 +25,24 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./build
+
+  lhci:
+    name: Lighthouse CI
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          npm install
+      - name: npm build
+        run: |
+          npm run build
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.3.x
+          lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
