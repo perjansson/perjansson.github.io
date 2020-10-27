@@ -14,6 +14,7 @@ import { generateSizes } from '../util/responsiveHelper'
 const VARIANTS_BASE = {
   medium: 18,
   large: 24,
+  xLarge: 42,
 }
 
 const glow = (fromColor, toColor) => keyframes`
@@ -27,6 +28,7 @@ const glow = (fromColor, toColor) => keyframes`
 
 const Text = styled.div` 
   ${({ glowColors }) =>
+    glowColors &&
     glowColors[0] &&
     css`
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px ${glowColors[0]},
@@ -53,11 +55,14 @@ const Text = styled.div`
       large: {
         fontSize: generateSizes(VARIANTS_BASE['large']),
       },
+      xLarge: {
+        fontSize: generateSizes(VARIANTS_BASE['xLarge'], 1.6),
+      },
     },
   })}`
 
 Text.propTypes = {
-  variant: oneOf(['medium', 'large']),
+  variant: oneOf(['medium', 'large', 'xLarge']),
   glowColors: arrayOf(string),
   pulse: bool,
 }
