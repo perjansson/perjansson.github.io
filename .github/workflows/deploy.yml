@@ -16,11 +16,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install Packages
-      run: npm install
-    - name: Build page
-      run: npm run build
-    - name: Deploy to gh-pages
+    - name: Install packages
+      run: yarn
+    - name: Build app
+      run: yarn build
+    - name: Deploy app to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
@@ -30,19 +30,20 @@ jobs:
     name: Lighthouse CI
     needs: deploy
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js 12.x
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
-      - name: npm install
-        run: |
-          npm install
-      - name: npm build
-        run: |
-          npm run build
-      - name: run Lighthouse CI
+          node-version: ${{ matrix.node-version }}
+      - name: Install packages
+        run: yarn
+      - name: Build app
+        run: yarn build
+      - name: Audit with Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.3.x
           lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
