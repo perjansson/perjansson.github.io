@@ -1,55 +1,9 @@
 import React from 'react'
 import { string } from 'prop-types'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 import Text from './Text'
-
-const shake = keyframes`
-  5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
-    filter: blur(0.018em);
-    transform: translateY(0.018em) rotate(0deg);
-  }
-
-  10%, 30%, 40%, 50%, 70%, 80%, 90% {
-    filter: blur(0.01em);
-    transform: translateY(-0.018em) rotate(0deg);
-  }
-
-  20%, 60% {
-    filter: blur(0.03em);
-    transform: translate(-0.018em, 0.018em) rotate(0deg);
-  }
-
-  45%, 85% {
-    filter: blur(0.03em);
-    transform: translate(0.018em, -0.018em) rotate(0deg);
-  }
-
-  100% {
-    filter: blur(0.007em);
-    transform: translate(0) rotate(-0.5deg);
-  }
-`
-
-const crack1 = keyframes`
-  0%, 95% {
-    transform: translate(-50%, -50%);
-  }
-
-  100% {
-    transform: translate(-51%, -48%);
-  }
-`
-
-const crack2 = keyframes`
-  0%, 95% {
-    transform: translate(-50%, -50%);
-  }
-
-  100% {
-    transform: translate(-49%, -53%);
-  }
-`
+import { crack1, crack2, shake } from '../styles/animations'
 
 const Header = styled.h1`
   font-weight: 700;
@@ -90,7 +44,7 @@ const Header = styled.h1`
 `
 
 const BlackMirror = ({ children }) => (
-  <Text variant="xLarge" textAlign="center">
+  <Text variant="xxLarge" textAlign="center">
     <Header data-text={children}>
       <span>{children}</span>
     </Header>

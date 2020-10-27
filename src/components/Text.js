@@ -10,18 +10,25 @@ import {
 import { oneOf, string, bool } from 'prop-types'
 
 import { generateSizes } from '../util/responsiveHelper'
+import { fadeIn as fadeInAnimation } from '../styles/animations'
 
 const VARIANTS_BASE = {
   medium: 18,
-  large: 24,
-  xLarge: 42,
+  large: 28,
+  xLarge: 28,
+  xxLarge: 38,
 }
 
 const Text = styled.div`
+  ${({ fadeIn }) =>
+    fadeIn &&
+    css`
+      animation: ${fadeInAnimation} 250ms ease-in forwards;
+    `}
   ${({ glowColor }) =>
     glowColor &&
     css`
-      text-shadow: 0 0 0.05em ${glowColor};
+      text-shadow: 0 0 0.15em ${glowColor};
     `}
   ${space}
   ${layout}
@@ -39,13 +46,16 @@ const Text = styled.div`
       xLarge: {
         fontSize: generateSizes(VARIANTS_BASE['xLarge'], 1.6),
       },
+      xxLarge: {
+        fontSize: generateSizes(VARIANTS_BASE['xxLarge'], 1.8),
+      },
     },
   })}`
 
 Text.propTypes = {
-  variant: oneOf(['medium', 'large', 'xLarge']),
+  variant: oneOf(['medium', 'large', 'xLarge', 'xxLarge']),
   glowColor: string,
-  pulse: bool,
+  fadeIn: bool,
 }
 
 Text.defaultProps = {

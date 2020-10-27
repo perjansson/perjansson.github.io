@@ -116,7 +116,8 @@
       html,
       html[data-theme='dark'] {
         --primary-bg-color: rgb(20, 23, 28);
-        --primary-header-color: rgb(255, 255, 255);
+        --primary-bg-half-transparent-color: rgb(20, 23, 28, 0.5);
+        --primary-header-color: rgb(255, 255, 255, 0.8);
         --primary-header-glow-color: rgb(255, 255, 255);
         --primary-text-color: rgba(14, 88, 162, 0.655);
         --opposite-theme-bg-color: rgb(245, 246, 247);
@@ -126,6 +127,7 @@
 
       html[data-theme='light'] {
         --primary-bg-color: rgb(230, 230, 230);
+        --primary-bg-half-transparent-color: rgb(230, 230, 230, 0.5);
         --primary-header-color: rgb(18, 18, 18);
         --primary-header-glow-color: rgb(18, 18, 18);
         --primary-text-color: rgb(245, 246, 247);
@@ -139,7 +141,6 @@
         color: var(--primary-text-color);
         font-size: 16px;
         font-family: Rubik, Arial, sans-serif;
-        overflow: hidden;
       }
     </style>
   </head>
