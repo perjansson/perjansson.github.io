@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { space, layout, flexbox, color } from 'styled-system'
 
 const Box = styled.div`
@@ -6,6 +6,10 @@ const Box = styled.div`
   ${layout}
   ${flexbox}
   ${color}
+  ${({ cursor }) =>
+    css`
+      cursor: ${cursor};
+    `}
 `
 
 export default Box

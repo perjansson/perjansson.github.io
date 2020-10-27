@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled, { css } from 'styled-components'
 import {
   space,
   layout,
@@ -7,7 +7,7 @@ import {
   flexbox,
   variant,
 } from 'styled-system'
-import { oneOf, string, bool, arrayOf } from 'prop-types'
+import { oneOf, string, bool } from 'prop-types'
 
 import { generateSizes } from '../util/responsiveHelper'
 
@@ -17,30 +17,11 @@ const VARIANTS_BASE = {
   xLarge: 42,
 }
 
-const glow = (fromColor, toColor) => keyframes`
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px ${fromColor}, 0 0 40px ${fromColor}, 0 0 50px ${fromColor}, 0 0 60px ${fromColor}, 0 0 70px ${fromColor};
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px ${toColor}, 0 0 40px ${toColor}, 0 0 50px ${toColor}, 0 0 60px ${toColor}, 0 0 70px ${toColor}, 0 0 80px ${toColor};
-  }
-`
-
-const Text = styled.div` 
-  ${({ glowColors }) =>
-    glowColors &&
-    glowColors[0] &&
+const Text = styled.div`
+  ${({ glowColor }) =>
+    glowColor &&
     css`
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px ${glowColors[0]},
-        0 0 40px ${glowColors[0]}, 0 0 50px ${glowColors[0]},
-        0 0 60px ${glowColors[0]}, 0 0 70px ${glowColors[0]};
-    `}
-  ${({ glowColors, pulse }) =>
-    glowColors &&
-    pulse &&
-    css`
-      animation: ${glow(glowColors[1], glowColors[0])} 1s ease-in-out infinite
-        alternate;
+      text-shadow: 0 0 0.05em ${glowColor};
     `}
   ${space}
   ${layout}
@@ -63,7 +44,7 @@ const Text = styled.div`
 
 Text.propTypes = {
   variant: oneOf(['medium', 'large', 'xLarge']),
-  glowColors: arrayOf(string),
+  glowColor: string,
   pulse: bool,
 }
 

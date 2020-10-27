@@ -23,17 +23,13 @@ const Header = ({ children }) => {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        bg="var(--secondary-bg-color)"
       >
         <Text
           variant="large"
           color="var(--primary-header-color)"
           marginLeft="auto"
           textAlign="center"
-          glowColors={[
-            'var(--primary-header-primary-glow-color)',
-            'var(--primary-header-secondary-glow-color)',
-          ]}
+          glowColor="var(--primary-header-glow-color)"
           pulse={false}
         >
           {children}
