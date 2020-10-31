@@ -2,14 +2,14 @@ import React from 'react'
 import { any, bool } from 'prop-types'
 
 import Box from './Box'
-import Text from './Text'
+import Text, { TextVariant } from './Text'
 
-const Header = ({ children, contrast, ...rest }) => {
+const Header = ({ children, contrast, textVariant, ...rest }) => {
   return (
     <Box minWidth={350} {...rest}>
       <Text
         textTransform="lowercase"
-        variant="xLarge"
+        variant={textVariant}
         color={
           !contrast
             ? 'var(--primary-header-color)'
@@ -31,6 +31,11 @@ const Header = ({ children, contrast, ...rest }) => {
 Header.propTypes = {
   children: any.isRequired,
   contrast: bool,
+  textVariant: TextVariant,
+}
+
+Header.defaultProps = {
+  textVariant: 'xLarge',
 }
 
 export default Header

@@ -49,6 +49,7 @@ export default {
         'Platform to enable airplane passengers to attain wireless internet connectivity.',
       me:
         'Software developer helping Panasonic developing new services to enable airplane passengers to attain wireless internet connectivity. Daily work consists of implementing new features and at the same time gradually modernizing the technical solution as well as helping the development team build a solution that will be a solid platform for the future.',
+      asset: 'pac',
       tags: [
         'javascript',
         'react',
@@ -73,6 +74,7 @@ export default {
         'HBO GO client in US for TV platforms: Samsung Orsay, TiVo set-top box and Hotels (LG and Enseo devices). A web application using HTML, CSS, and TypeScript. Frameworks and libraries used are React, Redux, Styled Components and Ramda. It is built using Grunt and Browserify.',
       me:
         'Software developer of the HBO GO app for different platforms and devices. Daily work consists of both developing new features in a shiny new codebase but also maintaining and solving tricky problems in a legacy codebase. Fun and challenging!',
+      asset: 'hbogo',
       tags: [
         'typescript',
         'react',
@@ -94,6 +96,7 @@ export default {
         'Several different betting websites built using web technologies and using configuration of a headless CMS to create the final experience for the client.',
       me:
         'Frontend developer in a team responsible for Unibet, Storspelare, Bingo.com and Bohemia Casino. Development of mostly new features build with the latest technologies but also maintaining legacy code. Trying daily to contribute to team becoming more efficient both in programming but also in team work and good development practices.',
+      asset: 'unibet',
       tags: [
         'javascript',
         'react',

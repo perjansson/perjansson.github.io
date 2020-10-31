@@ -46,7 +46,7 @@ const Text = styled.div`
         fontSize: generateSizes(VARIANTS_BASE['medium']),
       },
       large: {
-        fontSize: generateSizes(VARIANTS_BASE['large']),
+        fontSize: generateSizes(VARIANTS_BASE['large'], 1.4),
       },
       xLarge: {
         fontSize: generateSizes(VARIANTS_BASE['xLarge'], 1.6),
@@ -57,8 +57,10 @@ const Text = styled.div`
     },
   })}`
 
+export const TextVariant = oneOf(['medium', 'large', 'xLarge', 'xxLarge'])
+
 Text.propTypes = {
-  variant: oneOf(['medium', 'large', 'xLarge', 'xxLarge']),
+  variant: TextVariant,
   glowColor: string,
   fadeIn: bool,
 }

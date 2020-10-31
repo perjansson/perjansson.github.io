@@ -6,15 +6,17 @@ import Box from './Box'
 import Header from './Header'
 import Text from './Text'
 
-export const Section = ({ title, children }) => (
+export const Section = ({ title, text, children }) => (
   <SectionBox id={title} paddingBottom={['40px', '60px', '80px']}>
-    <SectionHeader>{title}</SectionHeader>
-    <SectionBody>{children}</SectionBody>
+    {title && <SectionHeader>{title}</SectionHeader>}
+    {text && <SectionBody>{text}</SectionBody>}
+    {children}
   </SectionBox>
 )
 
 Section.propTypes = {
   title: string,
+  text: string,
   children: any,
 }
 
@@ -24,13 +26,29 @@ export const SectionBox = styled(Box)`
   align-items: flex-start;
   justify-content: flex-start;
 `
+
 export const SectionHeader = ({ children, ...rest }) => (
-  <Header marginTop={['20px']} marginLeft={['20px', '40px', '60px']} {...rest}>
+  <Header
+    marginTop={['20px']}
+    marginBottom={['20px']}
+    marginLeft={['20px', '40px', '60px']}
+    {...rest}
+  >
     {children}
   </Header>
 )
 
 SectionHeader.propTypes = {
+  children: any,
+}
+
+export const SectionSubHeader = ({ children, ...rest }) => (
+  <Header marginTop={['20px']} textVariant="large" {...rest}>
+    {children}
+  </Header>
+)
+
+SectionSubHeader.propTypes = {
   children: any,
 }
 
@@ -59,7 +77,7 @@ SectionContent.propTypes = {
 
 const SectionBody = ({ children }) => (
   <SectionContent
-    marginTop={['20px', '40px', '60px']}
+    marginTop={['10px', '20px', '30px']}
     marginBottom={['20px', '40px', '60px']}
   >
     {children}
