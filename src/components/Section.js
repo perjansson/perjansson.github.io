@@ -24,7 +24,6 @@ export const SectionBox = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
 `
 
 export const SectionHeader = ({ children, ...rest }) => (
@@ -32,6 +31,7 @@ export const SectionHeader = ({ children, ...rest }) => (
     marginTop={['20px']}
     marginBottom={['20px']}
     marginLeft={['20px', '40px', '60px']}
+    textTransform="lowercase"
     {...rest}
   >
     {children}
@@ -43,7 +43,7 @@ SectionHeader.propTypes = {
 }
 
 export const SectionSubHeader = ({ children, ...rest }) => (
-  <Header marginTop={['20px']} textVariant="large" {...rest}>
+  <Header marginTop={['20px']} textVariant="large" glow={false} {...rest}>
     {children}
   </Header>
 )

@@ -13,13 +13,19 @@ import { generateSizes } from '../util/responsiveHelper'
 import { fadeIn as fadeInAnimation } from '../styles/animations'
 
 const VARIANTS_BASE = {
-  medium: 22,
-  large: 28,
-  xLarge: 32,
-  xxLarge: 38,
+  small: 16,
+  medium: 24,
+  large: 32,
+  xLarge: 38,
+  xxLarge: 44,
 }
 
 const Text = styled.div`
+  ${space}
+  ${layout}
+  ${color}
+  ${typography}
+  ${flexbox}
   ${({ fadeIn }) =>
     fadeIn &&
     css`
@@ -30,11 +36,6 @@ const Text = styled.div`
     css`
       text-shadow: 0 0 0.25em ${glowColor};
     `}
-  ${space}
-  ${layout}
-  ${color}
-  ${typography}
-  ${flexbox}
   ${({ textTransform, textDecoration }) =>
     css`
       text-transform: ${textTransform};
@@ -42,6 +43,9 @@ const Text = styled.div`
     `}
   ${variant({
     variants: {
+      small: {
+        fontSize: generateSizes(VARIANTS_BASE['small']),
+      },
       medium: {
         fontSize: generateSizes(VARIANTS_BASE['medium']),
       },
@@ -57,7 +61,13 @@ const Text = styled.div`
     },
   })}`
 
-export const TextVariant = oneOf(['medium', 'large', 'xLarge', 'xxLarge'])
+export const TextVariant = oneOf([
+  'small',
+  'medium',
+  'large',
+  'xLarge',
+  'xxLarge',
+])
 
 Text.propTypes = {
   variant: TextVariant,

@@ -11,6 +11,7 @@ import {
   SectionSubHeader,
 } from '../components/Section'
 import Box from '../components/Box'
+import Text from '../components/Text'
 
 const BackgroundBox = styled(SectionBox)`
   background-image: ${({ asset }) =>
@@ -44,10 +45,11 @@ const BackgroundBox = styled(SectionBox)`
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
 
   ${Nav} {
+    margin-bottom: 50px;
+
     > a {
       margin-bottom: 5px;
 
@@ -73,8 +75,12 @@ const HomePage = () => {
 
   return (
     <>
-      <BackgroundBox asset="profile" height="100vh">
-        <SectionHeader maxWidth="90%">
+      <BackgroundBox
+        asset="profile"
+        height="100vh"
+        justifyContent={['space-between', 'space-between']}
+      >
+        <SectionHeader maxWidth={['90%', '80%', '60%']}>
           {content.me.name}
           <br />
           {content.me.title}
@@ -87,7 +93,7 @@ const HomePage = () => {
           <BackgroundBox
             key={project.title}
             asset={`projects/${project.asset}`}
-            height="80vh"
+            height="90vh"
             marginTop={['10px', '20px', '30px']}
           >
             <Box
@@ -101,6 +107,12 @@ const HomePage = () => {
                 <SectionSubHeader textAlign="center">
                   {project.title}
                 </SectionSubHeader>
+                <Text variant="medium" marginTop="40px">
+                  {project.description}
+                </Text>
+                <Text variant="small" marginTop="40px">
+                  {project.me}
+                </Text>
               </Box>
             </Box>
           </BackgroundBox>
