@@ -49,8 +49,9 @@ export default {
         'Platform to enable airplane passengers to attain wireless internet connectivity.',
       me:
         'Software developer helping Panasonic developing new services to enable airplane passengers to attain wireless internet connectivity. Daily work consists of implementing new features and at the same time gradually modernizing the technical solution as well as helping the development team build a solution that will be a solid platform for the future.',
+      role: 'Frontend developer',
+      date: '2020-',
       asset: 'pac',
-role: 'Frontend developer',
       tags: [
         'javascript',
         'react',
@@ -75,7 +76,9 @@ role: 'Frontend developer',
         'HBO GO client in US for TV platforms: Samsung Orsay, TiVo set-top box and Hotels (LG and Enseo devices). A web application using HTML, CSS, and TypeScript. Frameworks and libraries used are React, Redux, Styled Components and Ramda. It is built using Grunt and Browserify.',
       me:
         'Software developer of the HBO GO app for different platforms and devices. Daily work consists of both developing new features in a shiny new codebase but also maintaining and solving tricky problems in a legacy codebase. Fun and challenging!',
-      asset: 'hbogo', role: 'Frontend developer',
+      role: 'Frontend developer',
+      date: '2018-2019',
+      asset: 'hbogo',
       tags: [
         'typescript',
         'react',
@@ -97,7 +100,9 @@ role: 'Frontend developer',
         'Several different betting websites built using web technologies and using configuration of a headless CMS to create the final experience for the client.',
       me:
         'Frontend developer in a team responsible for Unibet, Storspelare, Bingo.com and Bohemia Casino. Development of mostly new features build with the latest technologies but also maintaining legacy code. Trying daily to contribute to team becoming more efficient both in programming but also in team work and good development practices.',
-      asset: 'unibet', role: 'Frontend developer',
+      role: 'Frontend developer',
+      date: '2017-2018',
+      asset: 'unibet',
       tags: [
         'javascript',
         'react',
@@ -128,7 +133,10 @@ role: 'Frontend developer',
         'A web application that act as a matchmaking tool to find the best candidate of insourced consultants and employees for a given client and project. Also a back-office module for administrators and consultants to manage their skills, CVs, personal video, details etc.',
       me:
         "Responsible for building the full experience, ie. the client, a responsive web app that's both fast and intuitive to use, and the server with business logic, a nodejs app with mongodb as persistence.",
-     role: 'Fullstack developer', tags: [
+      role: 'Fullstack developer',
+      date: '2016-2018',
+      asset: 'matchmaking-tool',
+      tags: [
         'javascript',
         'angular',
         'ngxs',
@@ -159,7 +167,10 @@ role: 'Frontend developer',
         'Web application for back office of company that bridges the gap between known and anonymous web visitors by identifying and segmenting the companies visiting a website, and providing detailed, targetable business attributes in real-time.',
       me:
         'Frontend responsible to build a new admin web to support the needs of the admin users of Leadenhancer. Involves everything from architecture and build and deploy pipeline, REST api design to coding the bits and pieces that are a modern web application.',
-    role: 'Frontend developer',  tags: [
+      role: 'Frontend developer',
+      date: '2016-2017',
+      asset: 'le',
+      tags: [
         'javascript',
         'angular',
         'node',
@@ -176,7 +187,10 @@ role: 'Frontend developer',
         "Advisory Cockpit Tool to be used by advisors and help digitize an advisor's everyday. The bar was set very high and the application should not only contain a lot of functionality to simplify the days of an advisor, but the end result will also be a great user experience.",
       me:
         'Development and architecture of the frontend and BFF part of the application. Setting up fast and solid development experience and in general building the foundation of an easy to develop and maintain system. Daily work with building pages and components together with API design.',
-   role: 'Frontend architect & developer',   tags: [
+      role: 'Frontend architect & developer',
+      date: '2016-2018',
+      asset: 'cocpit',
+      tags: [
         'javascript',
         'react',
         'redux',
@@ -212,7 +226,8 @@ role: 'Frontend developer',
       description: 'A prototype for a digital platform for KBT treatment.',
       me:
         'Developer of a responsive web app, everything from Sketch to running in the cloud.',
-   role: 'Fullstack developer',   tags: [
+      role: 'Fullstack developer',
+      tags: [
         'javascript',
         'html',
         'jquery',

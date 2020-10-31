@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 import {
+  position,
+  border,
   space,
   layout,
   color,
@@ -13,14 +15,17 @@ import { generateSizes } from '../util/responsiveHelper'
 import { fadeIn as fadeInAnimation } from '../styles/animations'
 
 const VARIANTS_BASE = {
+  xSmall: 12,
   small: 16,
   medium: 24,
-  large: 32,
-  xLarge: 38,
+  large: 28,
+  xLarge: 36,
   xxLarge: 44,
 }
 
 const Text = styled.div`
+  ${position}
+  ${border}
   ${space}
   ${layout}
   ${color}
@@ -29,7 +34,8 @@ const Text = styled.div`
   ${({ fadeIn }) =>
     fadeIn &&
     css`
-      animation: ${fadeInAnimation} 250ms ease-in forwards;
+      opacity: 0;
+      animation: ${fadeInAnimation} 250ms 500ms ease-in forwards;
     `}
   ${({ glowColor }) =>
     glowColor &&
@@ -43,6 +49,9 @@ const Text = styled.div`
     `}
   ${variant({
     variants: {
+      xSmall: {
+        fontSize: generateSizes(VARIANTS_BASE['xSmall']),
+      },
       small: {
         fontSize: generateSizes(VARIANTS_BASE['small']),
       },
@@ -62,6 +71,7 @@ const Text = styled.div`
   })}`
 
 export const TextVariant = oneOf([
+  'xSmall',
   'small',
   'medium',
   'large',
@@ -73,6 +83,7 @@ Text.propTypes = {
   variant: TextVariant,
   glowColor: string,
   fadeIn: bool,
+  noSizeScale: bool,
 }
 
 Text.defaultProps = {

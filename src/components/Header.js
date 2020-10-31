@@ -13,7 +13,7 @@ const Header = ({
   ...rest
 }) => {
   return (
-    <Box minWidth={350} {...rest}>
+    <Box {...rest}>
       <Text
         textTransform={textTransform}
         variant={textVariant}

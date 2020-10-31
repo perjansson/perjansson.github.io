@@ -28,7 +28,7 @@ export const SectionBox = styled(Box)`
 
 export const SectionHeader = ({ children, ...rest }) => (
   <Header
-    marginTop={['20px']}
+    marginTop={['40px', '80px']}
     marginBottom={['20px']}
     marginLeft={['20px', '40px', '60px']}
     textTransform="lowercase"
@@ -52,29 +52,6 @@ SectionSubHeader.propTypes = {
   children: any,
 }
 
-export const SectionContent = ({ children, ...rest }) => {
-  return (
-    <Box
-      width={1}
-      display="flex"
-      alignItems="flex-start"
-      justifyContent="center"
-      {...rest}
-    >
-      <Text
-        variant="medium"
-        color="var(--primary-header-color)"
-        width={['90%', '80%', '80%']}
-        dangerouslySetInnerHTML={{ __html: children }}
-      ></Text>
-    </Box>
-  )
-}
-
-SectionContent.propTypes = {
-  children: any,
-}
-
 const SectionBody = ({ children }) => (
   <SectionContent
     marginTop={['10px', '20px', '30px']}
@@ -85,5 +62,29 @@ const SectionBody = ({ children }) => (
 )
 
 SectionBody.propTypes = {
+  children: any,
+}
+
+export const SectionContent = ({ children, ...rest }) => {
+  return (
+    <Box
+      width={1}
+      display="flex"
+      alignItems="flex-start"
+      justifyContent="center"
+      {...rest}
+    >
+      <Text
+        variant="small"
+        lineHeight={['28px', '36px', '44px']}
+        color="var(--primary-header-color)"
+        width={['90%', '80%', '80%']}
+        dangerouslySetInnerHTML={{ __html: children }}
+      ></Text>
+    </Box>
+  )
+}
+
+SectionContent.propTypes = {
   children: any,
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { layout, space } from 'styled-system'
-import { bool } from 'prop-types'
+import { string, any } from 'prop-types'
 
 import Text from '../components/Text'
 
@@ -14,45 +14,25 @@ export const Nav = styled.nav`
   }
 `
 
-const NavLink = ({ href, contrast, children }) => (
+export const NavLink = ({ href, children, ...rest }) => (
   <a href={href}>
-    <Text
-      variant="medium"
-      color={
-        !contrast
-          ? 'var(--secondary-header-color)'
-          : 'var(--secondary-header-contrast-color)'
-      }
-      glowColor={
-        !contrast
-          ? 'var(--secondary-header-glow-color)'
-          : 'var(--secondary-header-contrast-glow-color)'
-      }
-      fadeIn
-    >
+    <Text variant="medium" color="var(--link-color)" fadeIn {...rest}>
       {children}
     </Text>
   </a>
 )
 
-export const Navigation = ({ contrast }) => (
+NavLink.propTypes = {
+  href: string,
+  children: any,
+}
+
+export const Navigation = () => (
   <Nav
     marginTop={['40px', '60px', '80px']}
     marginLeft={['40px', '60px', '80px']}
   >
-    <NavLink href="#who am i" contrast={contrast}>
-      who am i
-    </NavLink>
-    <NavLink href="#what have i done" contrast={contrast}>
-      what have i done
-    </NavLink>
+    <NavLink href="#who am i">who am i</NavLink>
+    <NavLink href="#what have i done">what have i done</NavLink>
   </Nav>
 )
-
-Navigation.propTypes = {
-  contrast: bool,
-}
-
-Navigation.defaultProps = {
-  contrast: false,
-}
