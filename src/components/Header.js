@@ -1,10 +1,10 @@
 import React from 'react'
-import { any } from 'prop-types'
+import { any, bool } from 'prop-types'
 
 import Box from './Box'
 import Text from './Text'
 
-const Header = ({ children, ...rest }) => {
+const Header = ({ children, contrast, ...rest }) => {
   return (
     <header>
       <Box
@@ -16,9 +16,18 @@ const Header = ({ children, ...rest }) => {
         {...rest}
       >
         <Text
+          textTransform="lowercase"
           variant="xLarge"
-          color="var(--primary-header-color)"
-          glowColor="var(--primary-header-glow-color)"
+          color={
+            !contrast
+              ? 'var(--primary-header-color)'
+              : 'var(--primary-header-contrast-color)'
+          }
+          glowColor={
+            !contrast
+              ? 'var(--primary-header-glow-color)'
+              : 'var(--primary-header-contrast-glow-color)'
+          }
           fadeIn
         >
           {children}
@@ -30,6 +39,7 @@ const Header = ({ children, ...rest }) => {
 
 Header.propTypes = {
   children: any.isRequired,
+  contrast: bool,
 }
 
 export default Header

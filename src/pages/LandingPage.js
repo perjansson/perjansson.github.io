@@ -7,6 +7,8 @@ import BlackMirror from '../components/BlackMirror'
 import Text from '../components/Text'
 import { fadeIn } from '../styles/animations'
 
+import content from '../content'
+
 const ContinueLink = styled(Text)`
   padding-right: 40px;
   color: var(--link-color);
@@ -33,7 +35,7 @@ const LandingPage = ({ onClick }) => {
         onClick={onClick}
         cursor="pointer"
       >
-        <BlackMirror>Per Jansson</BlackMirror>
+        <BlackMirror>{content.me.name}</BlackMirror>
       </Box>
       <Box
         width="100%"

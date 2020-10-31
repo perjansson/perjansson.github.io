@@ -28,13 +28,18 @@ const Text = styled.div`
   ${({ glowColor }) =>
     glowColor &&
     css`
-      text-shadow: 0 0 0.15em ${glowColor};
+      text-shadow: 0 0 0.25em ${glowColor};
     `}
   ${space}
   ${layout}
   ${color}
   ${typography}
   ${flexbox}
+  ${({ textTransform, textDecoration }) =>
+    css`
+      text-transform: ${textTransform};
+      text-decoration: ${textDecoration};
+    `}
   ${variant({
     variants: {
       medium: {

@@ -1,10 +1,66 @@
 import styled from 'styled-components'
 import React from 'react'
-import Box from '../components/Box'
+import { any, string } from 'prop-types'
 
+import Box from '../components/Box'
 import Header from '../components/Header'
 
-const ProfileBox = styled(Box)`
+import content from '../content'
+import Text from '../components/Text'
+
+const Nav = styled.nav`
+  > a {
+    display: block;
+    text-decoration: none;
+  }
+`
+
+const Navigation = () => (
+  <Nav>
+    <a href="#who am i">
+      <Text
+        variant="medium"
+        color="var(--primary-header-contrast-color)"
+        glowColor="var(--primary-header-contrast-glow-color)"
+      >
+        - who am i
+      </Text>
+    </a>
+    <a href="#what have i done">
+      <Text
+        variant="medium"
+        color="var(--primary-header-contrast-color)"
+        glowColor="var(--primary-header-contrast-glow-color)"
+      >
+        - what have i done
+      </Text>
+    </a>
+  </Nav>
+)
+
+const Section = ({ title, height }) => (
+  <SectionBox id={title} height={height}>
+    <SectionHeader>{title}</SectionHeader>
+  </SectionBox>
+)
+
+Section.propTypes = {
+  title: string,
+  height: string,
+}
+
+Section.defaultProps = {
+  height: '100%',
+}
+
+const SectionBox = styled(Box)`
+  min-height: ${({ height }) => height};
+  display: flex;
+  align-items: flex-start,
+  justify-content: flex-start
+`
+
+const ProfileBox = styled(SectionBox)`
   background-image: linear-gradient(
       to bottom,
       transparent,
@@ -45,7 +101,45 @@ const ProfileBox = styled(Box)`
 
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  ${Nav} {
+    margin: 15px 0 0 40px;
+
+    @media (min-width: 52em) and (orientation: portrait) {
+      margin: 30px 0 0 80px;
+    }
+
+    @media (min-width: 64em) and (orientation: landscape) {
+      margin: 100px 0 0 75px;
+    }
+
+    > a {
+      margin-bottom: 5px;
+
+      @media (min-width: 52em) and (orientation: landscape) {
+        margin-bottom: 15px;
+      }
+    }
+  }
 `
+
+const SectionHeader = ({ children, ...rest }) => (
+  <Header
+    paddingLeft={['5px', '20px,', '30px']}
+    paddingTop={['30px', '40px,', '50px']}
+    {...rest}
+  >
+    {children}
+  </Header>
+)
+
+SectionHeader.propTypes = {
+  children: any,
+}
 
 const HomePage = () => {
   // const onThemeChange = () => {
@@ -58,21 +152,16 @@ const HomePage = () => {
 
   return (
     <>
-      <ProfileBox
-        minHeight="100%"
-        display="flex"
-        alignItems="flex-end"
-        justifyContent="flex-start"
-      >
-        <Header
-          paddingLeft={['5px', '20px,', '30px']}
-          paddingBottom={['30px', '40px,', '50px']}
-        >
-          per jansson
+      <ProfileBox height="100%">
+        <SectionHeader contrast>
+          {content.me.name}
           <br />
-          fullstack web developer
-        </Header>
+          {content.me.title}
+        </SectionHeader>
+        <Navigation />
       </ProfileBox>
+      <Section title="who am i" height="80%" />
+      <Section title="what have i done" />
     </>
   )
 }
