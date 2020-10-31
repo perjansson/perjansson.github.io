@@ -6,34 +6,25 @@ import Text from './Text'
 
 const Header = ({ children, contrast, ...rest }) => {
   return (
-    <header>
-      <Box
-        width={1}
-        minWidth={350}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        {...rest}
+    <Box minWidth={350} {...rest}>
+      <Text
+        textTransform="lowercase"
+        variant="xLarge"
+        color={
+          !contrast
+            ? 'var(--primary-header-color)'
+            : 'var(--primary-header-contrast-color)'
+        }
+        glowColor={
+          !contrast
+            ? 'var(--primary-header-glow-color)'
+            : 'var(--primary-header-contrast-glow-color)'
+        }
+        fadeIn
       >
-        <Text
-          textTransform="lowercase"
-          variant="xLarge"
-          color={
-            !contrast
-              ? 'var(--primary-header-color)'
-              : 'var(--primary-header-contrast-color)'
-          }
-          glowColor={
-            !contrast
-              ? 'var(--primary-header-glow-color)'
-              : 'var(--primary-header-contrast-glow-color)'
-          }
-          fadeIn
-        >
-          {children}
-        </Text>
-      </Box>
-    </header>
+        {children}
+      </Text>
+    </Box>
   )
 }
 

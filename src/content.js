@@ -37,9 +37,9 @@ export default {
       },
     ],
     short:
-      "Hi, I'm Per, a <strong>curious</strong> software developer with a passion to <strong>build great applications</strong> and help others do the same.",
+      "Hi, I'm Per, a curious software developer with a passion to build great applications and help others do the same.",
     long:
-      'My core skills are in fullstack <strong>web development</strong> and, although I’m no stranger to backend, I’ve always been drawn to the <strong>frontend</strong> side. I like the things that are visual and that a user interacts with and I have many years of experience in how to build systems and applications that are a good mix of <strong>quality, robustness and ease of use</strong>. I really enjoy working with <strong>Node, React and JavaScript</strong> in general, but I also have done a lot of Java previously together with both Android och iOS development. I addition to that I also like the architectural part of how a solid frontend is created together with making the <strong>Developer Experience</strong> really good for the current team so it’s a joy to work with.',
+      'My core skills are in fullstack web development and, although I’m no stranger to backend, I’ve always been drawn to the frontend side. I like the things that are visual and that a user interacts with and I have many years of experience in how to build systems and applications that are a good mix of quality, robustness and ease of use. I really enjoy working with Node, React and JavaScript in general, but I also have done a lot of Java previously together with both Android och iOS development. I addition to that I also like the architectural part of how a solid frontend is created together with making the Developer Experience really good for the current team so it’s a joy to work with.',
   },
 
   projects: [

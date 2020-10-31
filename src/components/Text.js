@@ -13,9 +13,9 @@ import { generateSizes } from '../util/responsiveHelper'
 import { fadeIn as fadeInAnimation } from '../styles/animations'
 
 const VARIANTS_BASE = {
-  medium: 18,
+  medium: 22,
   large: 28,
-  xLarge: 28,
+  xLarge: 32,
   xxLarge: 38,
 }
 

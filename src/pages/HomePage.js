@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
+import { layout, space } from 'styled-system'
 import { any, string } from 'prop-types'
 
 import Box from '../components/Box'
@@ -9,6 +10,8 @@ import content from '../content'
 import Text from '../components/Text'
 
 const Nav = styled.nav`
+  ${space}
+  ${layout}
   > a {
     display: block;
     text-decoration: none;
@@ -16,14 +19,17 @@ const Nav = styled.nav`
 `
 
 const Navigation = () => (
-  <Nav>
+  <Nav
+    marginTop={['40px', '60px', '80px']}
+    marginLeft={['40px', '60px', '80px']}
+  >
     <a href="#who am i">
       <Text
         variant="medium"
         color="var(--primary-header-contrast-color)"
         glowColor="var(--primary-header-contrast-glow-color)"
       >
-        - who am i
+        who am i
       </Text>
     </a>
     <a href="#what have i done">
@@ -32,32 +38,29 @@ const Navigation = () => (
         color="var(--primary-header-contrast-color)"
         glowColor="var(--primary-header-contrast-glow-color)"
       >
-        - what have i done
+        what have i done
       </Text>
     </a>
   </Nav>
 )
 
-const Section = ({ title, height }) => (
-  <SectionBox id={title} height={height}>
+const Section = ({ title, children }) => (
+  <SectionBox id={title} paddingBottom={['40px', '60px', '80px']}>
     <SectionHeader>{title}</SectionHeader>
+    <SectionBody>{children}</SectionBody>
   </SectionBox>
 )
 
 Section.propTypes = {
   title: string,
-  height: string,
-}
-
-Section.defaultProps = {
-  height: '100%',
+  children: any,
 }
 
 const SectionBox = styled(Box)`
-  min-height: ${({ height }) => height};
   display: flex;
-  align-items: flex-start,
-  justify-content: flex-start
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 `
 
 const ProfileBox = styled(SectionBox)`
@@ -107,16 +110,6 @@ const ProfileBox = styled(SectionBox)`
   align-items: flex-start;
 
   ${Nav} {
-    margin: 15px 0 0 40px;
-
-    @media (min-width: 52em) and (orientation: portrait) {
-      margin: 30px 0 0 80px;
-    }
-
-    @media (min-width: 64em) and (orientation: landscape) {
-      margin: 100px 0 0 75px;
-    }
-
     > a {
       margin-bottom: 5px;
 
@@ -128,16 +121,48 @@ const ProfileBox = styled(SectionBox)`
 `
 
 const SectionHeader = ({ children, ...rest }) => (
-  <Header
-    paddingLeft={['5px', '20px,', '30px']}
-    paddingTop={['30px', '40px,', '50px']}
-    {...rest}
-  >
+  <Header marginTop={['20px']} marginLeft={['20px', '40px', '60px']} {...rest}>
     {children}
   </Header>
 )
 
 SectionHeader.propTypes = {
+  children: any,
+}
+
+const SectionContent = ({ children, ...rest }) => {
+  return (
+    <Box
+      width={1}
+      display="flex"
+      alignItems="flex-start"
+      justifyContent="center"
+      {...rest}
+    >
+      <Text
+        variant="medium"
+        color="var(--primary-header-color)"
+        width={['90%', '80%', '80%']}
+        dangerouslySetInnerHTML={{ __html: children }}
+      ></Text>
+    </Box>
+  )
+}
+
+SectionContent.propTypes = {
+  children: any,
+}
+
+const SectionBody = ({ children }) => (
+  <SectionContent
+    marginTop={['20px', '40px', '60px']}
+    marginBottom={['20px', '40px', '60px']}
+  >
+    {children}
+  </SectionContent>
+)
+
+SectionBody.propTypes = {
   children: any,
 }
 
@@ -153,14 +178,14 @@ const HomePage = () => {
   return (
     <>
       <ProfileBox height="100%">
-        <SectionHeader contrast>
+        <SectionHeader maxWidth="90%">
           {content.me.name}
           <br />
           {content.me.title}
         </SectionHeader>
         <Navigation />
       </ProfileBox>
-      <Section title="who am i" height="80%" />
+      <Section title="who am i">{content.me.long}</Section>
       <Section title="what have i done" />
     </>
   )
