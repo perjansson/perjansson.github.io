@@ -111,12 +111,7 @@ const HomePage = () => {
                   <Text
                     variant="medium"
                     marginTop="40px"
-                    dangerouslySetInnerHTML={{ __html: project.description }}
-                  />
-                  <Text
-                    variant="small"
-                    marginTop="40px"
-                    dangerouslySetInnerHTML={{ __html: project.me }}
+                    dangerouslySetInnerHTML={{ __html: project.role }}
                   />
                 </Box>
               </Box>
