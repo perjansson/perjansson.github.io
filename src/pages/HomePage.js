@@ -90,32 +90,38 @@ const HomePage = () => {
       <Section title="who am i" text={content.me.long} />
       <Section title="what have i done">
         {content.projects.map(project => (
-          <BackgroundBox
+          <Box
             key={project.title}
-            asset={`projects/${project.asset}`}
+            paddingBottom={['5px', '10px']}
             height="90vh"
-            marginTop={['10px', '20px', '30px']}
+            bg="var(--primary-header-glow-color)"
           >
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              height="100%"
-              width="100%"
-            >
-              <Box width={['90%', '80%', '80%']}>
-                <SectionSubHeader textAlign="center">
-                  {project.title}
-                </SectionSubHeader>
-                <Text variant="medium" marginTop="40px">
-                  {project.description}
-                </Text>
-                <Text variant="small" marginTop="40px">
-                  {project.me}
-                </Text>
+            <BackgroundBox asset={`projects/${project.asset}`} height="100%">
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                height="100%"
+                width="100%"
+              >
+                <Box width={['90%', '80%', '80%']}>
+                  <SectionSubHeader textAlign="center">
+                    {project.title}
+                  </SectionSubHeader>
+                  <Text
+                    variant="medium"
+                    marginTop="40px"
+                    dangerouslySetInnerHTML={{ __html: project.description }}
+                  />
+                  <Text
+                    variant="small"
+                    marginTop="40px"
+                    dangerouslySetInnerHTML={{ __html: project.me }}
+                  />
+                </Box>
               </Box>
-            </Box>
-          </BackgroundBox>
+            </BackgroundBox>
+          </Box>
         ))}
       </Section>
     </>
