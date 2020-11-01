@@ -51,6 +51,16 @@ const BackgroundBox = styled(SectionBox)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  opacity: ${({ asset }) => (asset === 'profile' ? 1.0 : 0.85)};
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+
+  &:hover {
+    opacity: 1;
+    transform: ${({ asset }) =>
+      asset === 'profile' ? 'scale(1.0)' : 'scale(1.05)'};
+    z-index: 2;
+  }
 
   ${Nav} {
     margin-bottom: 50px;
