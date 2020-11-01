@@ -20,7 +20,7 @@ const VARIANTS_BASE = {
   medium: 24,
   large: 28,
   xLarge: 36,
-  xxLarge: 44,
+  xxLarge: 42,
 }
 
 const Text = styled.div`
@@ -65,7 +65,7 @@ const Text = styled.div`
         fontSize: generateSizes(VARIANTS_BASE['xLarge'], 1.6),
       },
       xxLarge: {
-        fontSize: generateSizes(VARIANTS_BASE['xxLarge'], 1.8),
+        fontSize: generateSizes(VARIANTS_BASE['xxLarge'], 1.7),
       },
     },
   })}`
