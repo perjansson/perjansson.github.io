@@ -45,7 +45,6 @@ const BackgroundBox = styled(SectionBox)`
       '_large.jpg)'};
   }
 
-  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -95,9 +94,9 @@ const ProjectBox = ({ project }) => (
   <BackgroundBox
     key={project.title}
     gradientType="full"
-    height={['50vh', '50vh', '75vh']}
     asset={`projects/${project.asset}`}
-    flex={['1 0 90%', '1 0 45%' /*, '1 0 30%'*/]}
+    flex={['1 0 90%', '1 0 45%']}
+    height={['100vw', '50vw']}
     marginBottom="10px"
     marginLeft={['0', '5px']}
     marginRight={['0', '5px']}
@@ -176,7 +175,12 @@ const HomePage = () => {
       </BackgroundBox>
       <Section title="who am i" text={content.me.long} />
       <Section title="what have i done">
-        <Box display="flex" flexWrap="wrap" width="100%">
+        <Box
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="space-around"
+          width="100%"
+        >
           {content.projects.map((project, i) => (
             <ProjectBox key={i} project={project} />
           ))}
