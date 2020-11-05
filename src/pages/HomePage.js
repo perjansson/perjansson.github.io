@@ -8,10 +8,12 @@ import {
   Section,
   SectionBox,
   SectionHeader,
+  SectionBody,
   SectionSubHeader,
 } from '../components/Section'
 import Box from '../components/Box'
 import Text from '../components/Text'
+import { Link } from '../components/Link'
 
 const BackgroundGradient = {
   toBottom:
@@ -179,6 +181,21 @@ const HomePage = () => {
         </NavLink>
       </BackgroundBox>
       <Section title="who am i" text={content.me.long} />
+      <Section title="get in contact">
+        <SectionBody>
+          {content.me.contacts
+            .filter(({ medium }) =>
+              ['GitHub', 'LinkedIn', 'Medium', 'Email'].some(m => m === medium)
+            )
+            .map(({ url, medium }, i) => (
+              <Link key={i}>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {medium}
+                </a>
+              </Link>
+            ))}
+        </SectionBody>
+      </Section>
       <Section title="what have i done">
         <Box
           display="flex"

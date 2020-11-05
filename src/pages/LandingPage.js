@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { func } from 'prop-types'
 
 import Box from '../components/Box'
 import BlackMirror from '../components/BlackMirror'
-import Text from '../components/Text'
-import { fadeIn } from '../styles/animations'
 
 import content from '../content'
-
-const ContinueLink = styled(Text)`
-  padding-right: 40px;
-  color: var(--link-color);
-  opacity: 0;
-  animation: ${fadeIn} 250ms ease-in forwards;
-`
+import { Link } from '../components/Link'
 
 const LandingPage = ({ onClick }) => {
   const [showLink, setShowLink] = useState(false)
@@ -44,7 +35,7 @@ const LandingPage = ({ onClick }) => {
         alignItems="center"
         justifyContent="flex-end"
       >
-        {showLink && <ContinueLink>Click anywhere to enter...</ContinueLink>}
+        {showLink && <Link>Click anywhere to enter...</Link>}
       </Box>
     </>
   )

@@ -9,7 +9,7 @@ import Text from './Text'
 export const Section = ({ title, text, children }) => (
   <SectionBox id={title} paddingBottom={['20px', '40px', '60px']}>
     {title && <SectionHeader>{title}</SectionHeader>}
-    {text && <SectionBody>{text}</SectionBody>}
+    {text && <SectionBody text={text} />}
     {children}
   </SectionBox>
 )
@@ -52,20 +52,22 @@ SectionSubHeader.propTypes = {
   children: any,
 }
 
-const SectionBody = ({ children }) => (
+export const SectionBody = ({ text, children }) => (
   <SectionContent
     marginTop={['10px', '20px', '30px']}
     marginBottom={['20px', '40px', '60px']}
+    text={text}
   >
     {children}
   </SectionContent>
 )
 
 SectionBody.propTypes = {
+  text: string,
   children: any,
 }
 
-export const SectionContent = ({ children, ...rest }) => {
+export const SectionContent = ({ text, children, ...rest }) => {
   return (
     <Box
       width={1}
@@ -74,17 +76,21 @@ export const SectionContent = ({ children, ...rest }) => {
       justifyContent="center"
       {...rest}
     >
-      <Text
-        variant="small"
-        lineHeight={['28px', '36px', '44px']}
-        color="var(--primary-header-color)"
-        width={['90%', '80%', '80%']}
-        dangerouslySetInnerHTML={{ __html: children }}
-      ></Text>
+      {text && (
+        <Text
+          variant="small"
+          lineHeight={['28px', '36px', '44px']}
+          color="var(--primary-header-color)"
+          width={['90%', '80%', '80%']}
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+      )}
+      {children}
     </Box>
   )
 }
 
 SectionContent.propTypes = {
+  text: string,
   children: any,
 }
