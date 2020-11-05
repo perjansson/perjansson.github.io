@@ -10,6 +10,7 @@ const Header = ({
   glow,
   textVariant,
   textTransform,
+  noSizeScale,
   ...rest
 }) => {
   return (
@@ -17,6 +18,7 @@ const Header = ({
       <Text
         textTransform={textTransform}
         variant={textVariant}
+        noSizeScale={noSizeScale}
         color={
           !contrast
             ? 'var(--primary-header-color)'
@@ -42,11 +44,12 @@ Header.propTypes = {
   contrast: bool,
   textVariant: TextVariant,
   textTransform: string,
+  noSizeScale: bool,
   glow: bool,
 }
 
 Header.defaultProps = {
-  textVariant: 'xLarge',
+  textVariant: 'xxLarge',
   textTransform: 'none',
   glow: true,
 }

@@ -7,7 +7,7 @@ import Header from './Header'
 import Text from './Text'
 
 export const Section = ({ title, text, children }) => (
-  <SectionBox id={title} paddingBottom={['40px', '60px', '80px']}>
+  <SectionBox id={title} paddingBottom={['20px', '40px', '60px']}>
     {title && <SectionHeader>{title}</SectionHeader>}
     {text && <SectionBody>{text}</SectionBody>}
     {children}
@@ -28,7 +28,7 @@ export const SectionBox = styled(Box)`
 
 export const SectionHeader = ({ children, ...rest }) => (
   <Header
-    marginTop={['40px', '80px']}
+    marginTop={['40px', '50px', '60px']}
     marginBottom={['20px']}
     marginLeft={['20px', '40px', '60px']}
     textTransform="lowercase"

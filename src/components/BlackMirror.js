@@ -44,7 +44,7 @@ const Header = styled.h1`
 `
 
 const BlackMirror = ({ children }) => (
-  <Text variant="xxLarge" textAlign="center">
+  <Text variant="xxxLarge" textAlign="center">
     <Header data-text={children}>
       <span>{children}</span>
     </Header>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { string, oneOf } from 'prop-types'
+import { string, oneOf, shape } from 'prop-types'
 
 import content from '../content'
 import { NavLink, Nav } from '../components/Navigation'
@@ -50,15 +50,17 @@ const BackgroundBox = styled(SectionBox)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  opacity: ${({ asset }) => (asset === 'profile' ? 1.0 : 0.85)};
+  opacity: ${({ asset }) => (asset === 'profile' ? 1.0 : 0.75)};
   transition: all 0.2s ease-in-out;
   z-index: 1;
+  border-radius: ${({ asset }) => (asset === 'profile' ? 0 : '20px')};
 
   &:hover {
     opacity: 1;
     transform: ${({ asset }) =>
-      asset === 'profile' ? 'scale(1.0)' : 'scale(1.05)'};
+      asset === 'profile' ? 'scale(1.0)' : 'scale(1.0)'};
     z-index: 2;
+    cursor: pointer;
   }
 
   ${Nav} {
@@ -83,23 +85,23 @@ BackgroundBox.defaultProps = {
   gradientType: 'toBottom',
 }
 
-const ProjectType = {
+const ProjectType = shape({
   title: string,
   role: string,
   date: string,
   asset: string,
-}
+})
 
 const ProjectBox = ({ project }) => (
   <BackgroundBox
     key={project.title}
     gradientType="full"
     asset={`projects/${project.asset}`}
-    flex={['1 0 90%', '1 0 45%']}
-    height={['100vw', '50vw']}
-    marginBottom="10px"
-    marginLeft={['0', '5px']}
-    marginRight={['0', '5px']}
+    flex={['1 0 90%', '1 0 45%', '1 0 30%']}
+    height={['90vw', '45vw', '30vw']}
+    marginBottom={['20px', '30px']}
+    marginLeft={['10px', '15px']}
+    marginRight={['10px', '15px']}
   >
     <Box
       height="100%"
@@ -119,13 +121,16 @@ const ProjectBox = ({ project }) => (
             bg="rgba(0,0,0,0.4)"
             borderRadius="10px"
             variant="xSmall"
+            noSizeScale
           >
             {project.date}
           </Text>
         )}
-        <SectionSubHeader textAlign="center">{project.title}</SectionSubHeader>
+        <SectionSubHeader textAlign="center" noSizeScale>
+          {project.title}
+        </SectionSubHeader>
         <Text
-          variant="medium"
+          variant="small"
           marginTop={['10px', '20px', '30px']}
           textAlign="center"
           noSizeScale
@@ -179,7 +184,9 @@ const HomePage = () => {
           display="flex"
           flexWrap="wrap"
           justifyContent="space-around"
-          width="100%"
+          marginTop={['10px', '20px', '30px']}
+          paddingLeft={['10px', '15px']}
+          paddingRight={['10px', '15px']}
         >
           {content.projects.map((project, i) => (
             <ProjectBox key={i} project={project} />

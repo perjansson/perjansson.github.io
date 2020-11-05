@@ -15,12 +15,12 @@ import { generateSizes } from '../util/responsiveHelper'
 import { fadeIn as fadeInAnimation } from '../styles/animations'
 
 const VARIANTS_BASE = {
-  xSmall: 12,
-  small: 16,
-  medium: 24,
-  large: 28,
+  xSmall: 16,
+  small: 20,
+  medium: 26,
+  large: 32,
   xLarge: 36,
-  xxLarge: 42,
+  xxLarge: 40,
 }
 
 const Text = styled.div`
@@ -47,28 +47,47 @@ const Text = styled.div`
       text-transform: ${textTransform};
       text-decoration: ${textDecoration};
     `}
-  ${variant({
-    variants: {
-      xSmall: {
-        fontSize: generateSizes(VARIANTS_BASE['xSmall']),
+  ${({ noSizeScale }) =>
+    variant({
+      variants: {
+        xSmall: {
+          fontSize: noSizeScale
+            ? VARIANTS_BASE['xSmall']
+            : generateSizes(VARIANTS_BASE['xSmall']),
+        },
+        small: {
+          fontSize: noSizeScale
+            ? VARIANTS_BASE['small']
+            : generateSizes(VARIANTS_BASE['small']),
+        },
+        medium: {
+          fontSize: noSizeScale
+            ? VARIANTS_BASE['medium']
+            : generateSizes(VARIANTS_BASE['medium']),
+        },
+        large: {
+          fontSize: noSizeScale
+            ? VARIANTS_BASE['large']
+            : generateSizes(VARIANTS_BASE['large'], 1.1),
+        },
+        xLarge: {
+          fontSize: noSizeScale
+            ? VARIANTS_BASE['xLarge']
+            : generateSizes(VARIANTS_BASE['xLarge'], 1.4),
+        },
+        xxLarge: {
+          fontSize: noSizeScale
+            ? VARIANTS_BASE['xxLarge']
+            : generateSizes(VARIANTS_BASE['xxLarge'], 1.4),
+        },
+        xxxLarge: {
+          fontSize: noSizeScale
+            ? VARIANTS_BASE['xxLarge']
+            : generateSizes(VARIANTS_BASE['xxLarge'], 1.8),
+        },
       },
-      small: {
-        fontSize: generateSizes(VARIANTS_BASE['small']),
-      },
-      medium: {
-        fontSize: generateSizes(VARIANTS_BASE['medium']),
-      },
-      large: {
-        fontSize: generateSizes(VARIANTS_BASE['large'], 1.4),
-      },
-      xLarge: {
-        fontSize: generateSizes(VARIANTS_BASE['xLarge'], 1.6),
-      },
-      xxLarge: {
-        fontSize: generateSizes(VARIANTS_BASE['xxLarge'], 1.7),
-      },
-    },
-  })}`
+    })}
+   `
 
 export const TextVariant = oneOf([
   'xSmall',
@@ -77,6 +96,7 @@ export const TextVariant = oneOf([
   'large',
   'xLarge',
   'xxLarge',
+  'xxxLarge',
 ])
 
 Text.propTypes = {
