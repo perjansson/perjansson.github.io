@@ -4,16 +4,16 @@ export default {
     title: 'Fullstack Web Developer',
     contacts: [
       {
+        medium: 'Medium',
+        url: 'https://medium.com/@perjansson',
+      },
+      {
         medium: 'GitHub',
         url: 'https://github.com/perjansson',
       },
       {
         medium: 'LinkedIn',
         url: 'https://www.linkedin.com/in/pichdude',
-      },
-      {
-        medium: 'Medium',
-        url: 'https://medium.com/@perjansson',
       },
       {
         medium: 'Stack Overflow',

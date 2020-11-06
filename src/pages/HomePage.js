@@ -182,18 +182,18 @@ const HomePage = () => {
       </BackgroundBox>
       <Section title="who am i" text={content.me.long} />
       <Section title="get in contact">
-        <SectionBody>
-          {content.me.contacts
-            .filter(({ medium }) =>
-              ['GitHub', 'LinkedIn', 'Medium', 'Email'].some(m => m === medium)
-            )
-            .map(({ url, medium }, i) => (
-              <Link key={i}>
-                <a href={url} target="_blank" rel="noopener noreferrer">
-                  {medium}
-                </a>
-              </Link>
-            ))}
+        <SectionBody scroll minHeight="50px" justifyContent="flex-start">
+          {content.me.contacts.map(({ url, medium }, i) => (
+            <Link
+              key={i}
+              whiteSpace="nowrap"
+              marginLeft={i === 0 ? ['20px', '40px', '60px'] : 0}
+            >
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                {medium}
+              </a>
+            </Link>
+          ))}
         </SectionBody>
       </Section>
       <Section title="what have i done">

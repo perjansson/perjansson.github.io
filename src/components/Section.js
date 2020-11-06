@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { any, string } from 'prop-types'
+import { any, string, bool } from 'prop-types'
 
 import Box from './Box'
 import Header from './Header'
@@ -52,28 +52,33 @@ SectionSubHeader.propTypes = {
   children: any,
 }
 
-export const SectionBody = ({ text, children }) => (
+export const SectionBody = ({ scroll, text, children, ...rest }) => (
   <SectionContent
+    scroll={scroll}
     marginTop={['10px', '20px', '30px']}
     marginBottom={['20px', '40px', '60px']}
     text={text}
+    {...rest}
   >
     {children}
   </SectionContent>
 )
 
 SectionBody.propTypes = {
+  scroll: bool,
   text: string,
   children: any,
 }
 
-export const SectionContent = ({ text, children, ...rest }) => {
+export const SectionContent = ({ scroll, text, children, ...rest }) => {
   return (
     <Box
       width={1}
       display="flex"
       alignItems="flex-start"
       justifyContent="center"
+      overflowX={scroll ? 'scroll' : 'hidden'}
+      className={scroll ? 'scroll' : undefined}
       {...rest}
     >
       {text && (
@@ -91,6 +96,7 @@ export const SectionContent = ({ text, children, ...rest }) => {
 }
 
 SectionContent.propTypes = {
+  scroll: bool,
   text: string,
   children: any,
 }
