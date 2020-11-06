@@ -52,10 +52,14 @@ const BackgroundBox = styled(SectionBox)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  opacity: ${({ asset }) => (asset === 'profile' ? 1.0 : 0.75)};
   transition: all 0.2s ease-in-out;
   z-index: 1;
   border-radius: ${({ asset }) => (asset === 'profile' ? 0 : '20px')};
+  opacity: 1;
+
+  @media (min-width: 52em) and (orientation: landscape) {
+    opacity: ${({ asset }) => (asset === 'profile' ? 1.0 : 0.8)};
+  }
 
   &:hover {
     opacity: 1;

@@ -86,7 +86,8 @@ export const SectionContent = ({ scroll, text, children, ...rest }) => {
           variant="small"
           lineHeight={['28px', '36px', '44px']}
           color="var(--primary-header-color)"
-          width={['90%', '80%', '80%']}
+          marginLeft={['20px', '40px', '60px']}
+          marginRight={['20px', '40px', '60px']}
           dangerouslySetInnerHTML={{ __html: text }}
         />
       )}
