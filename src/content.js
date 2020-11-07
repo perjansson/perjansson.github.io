@@ -227,6 +227,8 @@ export default {
       me:
         'Developer of a responsive web app, everything from Sketch to running in the cloud.',
       role: 'Fullstack developer',
+      asset: 'mindmend',
+      date: '2017',
       tags: [
         'javascript',
         'html',
@@ -248,6 +250,8 @@ export default {
         'A brand new back office solution along with enhancing and introducing an existing portfolio system in the Nordic countries',
       me:
         'Coding frontend architect developing the frontend tier, setting up fast and solid development practices/processes/style guides and build system together with being a happy team player working very close to the end user to guarantee the best result.',
+      role: 'Frontend developer',
+      asset: 'admin_tool',
       tags: [
         'javascript',
         'angularjs',
@@ -292,6 +296,8 @@ export default {
         "A system for calculating risk and return, both based on a customer's current portfolio but also on a better allocated portfolio that will be recommended to the customer.",
       me:
         'Full stack developer of the entire system, although primarily responsible for frontend and API, together with being a happy team player working very close to the end user to guarantee the best result.',
+      role: 'Fullstack developer',
+      asset: 'risk_calculator',
       tags: [
         'angularjs',
         'html',
@@ -324,6 +330,8 @@ export default {
         "Portfolio analysis system extended to support structuring a customer's total engagement in different portfolios to be able to twist and turn the customers current assets.",
       me:
         'Development and Scrum Master making sure that the team delivers what the end user expects with good code quality.',
+      role: 'Fullstack developer',
+      asset: 'multi_portfolio',
       tags: [
         'gwt',
         'java',
@@ -352,6 +360,7 @@ export default {
         "A system for doing customized analysis, optimization and recommendation of customer's current portfolio to be able to recommend a better portfolio that can give a higher return with a lower risk. <a href='https://medium.com/@perjansson/offshoring-from-the-scream-to-friendship-and-success-5b409c30d287' target='_blank' rel='noopener noreferrer'>Blog post about project on Medium</a>.",
       me:
         'Development and architecture of the system. Being UX and front end responsible to make the system easy and fast to use. Be proactive in efforts to get a distributed team between Sweden, Denmark and India to work.',
+      asset: 'care',
       tags: [
         'gwt',
         'java',
@@ -380,6 +389,7 @@ export default {
         'A web application for advisors to use when doing analysis of a customers holdings, for instance asset allocation, current and previous holdings, transactions, performance and profit and loss. <a href="https://medium.com/@perjansson/how-we-invented-and-introduced-drama-driven-demo-9cc564bc741f" target="_blank" rel="noopener noreferrer">Blog post about project on Medium</a>.',
       me:
         'Development and UX making sure the system makes sense and is easy to use, looks nice and is quick and responsive. Advocate efficient software development practices such as pair programming, TDD, code reviews and brown bag lunches.',
+      asset: 'portfolio',
       tags: [
         'gwt',
         'java',
