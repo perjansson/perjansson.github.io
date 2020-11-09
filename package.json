@@ -24,13 +24,16 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^1.19.1",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "start-server-and-test": "^1.11.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:e2e": "cypress open"
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "test:ci": "start-server-and-test start http-get://localhost:3000 test:e2e"
   },
   "browserslist": {
     "production": [
