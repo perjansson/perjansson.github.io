@@ -2,8 +2,6 @@ module.exports = {
   ci: {
     collect: {
       staticDistDir: './build',
-      // startServerCommand: 'yarn serve',
-      // url: 'http://localhost:5000',
     },
     assert: {
       assertions: {
