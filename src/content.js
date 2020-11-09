@@ -390,7 +390,7 @@ export default {
         'A web application for advisors to use when doing analysis of a customers holdings, for instance asset allocation, current and previous holdings, transactions, performance and profit and loss. <a href="https://medium.com/@perjansson/how-we-invented-and-introduced-drama-driven-demo-9cc564bc741f" target="_blank" rel="noopener noreferrer">Blog post about project on Medium</a>.',
       me:
         'Development and UX making sure the system makes sense and is easy to use, looks nice and is quick and responsive. Advocate efficient software development practices such as pair programming, TDD, code reviews and brown bag lunches.',
-      role: 'Fronted developer',
+      role: 'Frontend developer',
       asset: 'portfolio',
       tags: [
         'gwt',
@@ -440,7 +440,7 @@ export default {
         'A system to improve the planning and sorting of incoming and outgoing parcels for the Swedish postal service.',
       me:
         'Development with frontend responsibility to make sure the system was intuitive and easy to use. Held workshops with end users about how the interface should look like.',
-      role: 'Fronted developer',
+      role: 'Frontend developer',
       asset: 'postal_service',
       tags: [
         'jsf',
@@ -468,6 +468,8 @@ export default {
         'Change several existing bank systems to make sure they worked after a backend system for automatic payments was updated.',
       me:
         'Technical project manager and developer which involved planning and being part of the implementation.',
+      role: 'Technical Project Manager',
+      asset: 'automatic_payments',
       tags: [
         'jsf',
         'struts',
@@ -488,6 +490,8 @@ export default {
         'A Proof of concept application to prove that a current internet banking solution could be modified to work for another bank.',
       me:
         'Developer and development lead to show how we worked with planning, analysis, design, development, test and release.',
+      role: 'Development lead',
+      asset: 'internet_bank_seb_poc',
       tags: [
         'jsf',
         'myfaces',
@@ -510,6 +514,8 @@ export default {
         'Build a new shiny internet bank with new technologies, frameworks and most importantly new functionality. ',
       me:
         'Developer and front end specialist to make sure that the selected technologies played well together when both rebuilding existing functionality but also when adding new.',
+      role: 'Frontend developer',
+      asset: 'internet_bank_lf',
       tags: [
         'jsf',
         'myfaces',
@@ -533,6 +539,8 @@ export default {
       description:
         'A system to support bank officers help new customers move all of their existing engagement from other banks to Länsförsäkringar Bank.',
       me: 'Developer with front end responsibility.',
+      role: 'Frontend developer',
+      asset: 'change_bank',
       tags: [
         'jsf',
         'myfaces',
@@ -556,6 +564,8 @@ export default {
       description:
         'a system to enable a secure communication channel between bank officers and bank customers via the internet bank and an internal bank officer application.',
       me: 'Developer with front end responsibility.',
+      role: 'Frontend developer',
+      asset: 'secure_communication',
       tags: [
         'struts',
         'html',
@@ -574,6 +584,8 @@ export default {
       title: 'Internet bank for SEB (Bank) in Germany',
       description: 'A new internet bank for SEB in Germany.',
       me: 'Developer with fullstack responsibility.',
+      role: 'Fullstack developer',
+      asset: 'internet_bank_seb',
       tags: [
         'struts',
         'html',
