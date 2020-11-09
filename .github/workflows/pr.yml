@@ -1,6 +1,6 @@
-name: Continuous Integration
+name: Pull Request
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -42,26 +42,3 @@ jobs:
         run: |
           npm install -g @lhci/cli@0.3.x
           lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
-
-  deploy:
-    name: Build, Deploy
-    needs: [smoke-test, lhci]
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install packages
-      run: yarn
-    - name: Build app
-      run: yarn build
-    - name: Deploy app to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./build
