@@ -360,6 +360,7 @@ export default {
         "A system for doing customized analysis, optimization and recommendation of customer's current portfolio to be able to recommend a better portfolio that can give a higher return with a lower risk. <a href='https://medium.com/@perjansson/offshoring-from-the-scream-to-friendship-and-success-5b409c30d287' target='_blank' rel='noopener noreferrer'>Blog post about project on Medium</a>.",
       me:
         'Development and architecture of the system. Being UX and front end responsible to make the system easy and fast to use. Be proactive in efforts to get a distributed team between Sweden, Denmark and India to work.',
+      role: 'Fullstack developer',
       asset: 'care',
       tags: [
         'gwt',
@@ -389,6 +390,7 @@ export default {
         'A web application for advisors to use when doing analysis of a customers holdings, for instance asset allocation, current and previous holdings, transactions, performance and profit and loss. <a href="https://medium.com/@perjansson/how-we-invented-and-introduced-drama-driven-demo-9cc564bc741f" target="_blank" rel="noopener noreferrer">Blog post about project on Medium</a>.',
       me:
         'Development and UX making sure the system makes sense and is easy to use, looks nice and is quick and responsive. Advocate efficient software development practices such as pair programming, TDD, code reviews and brown bag lunches.',
+      role: 'Fronted developer',
       asset: 'portfolio',
       tags: [
         'gwt',
@@ -418,6 +420,8 @@ export default {
         'An Android app to view the current pollen level at a given location as well as recommended treatments and view closest pharmacy.',
       me:
         'Develop the Apoteket (swedish pharmacy) application for Android. Took the project from requirements and development to testing and release on Google Play.',
+      role: 'Mobile app developer',
+      asset: 'pharmacy_app',
       tags: ['android', 'java', 'android studio', 'scrum'],
     },
     {
@@ -426,6 +430,8 @@ export default {
         'An Android app to view the closest Statoil gas station as well as book trailers, vans etc.',
       me:
         'Develop the Swedish Statoil application for Android. Took the project from requirements and development to testing and release on Google Play.',
+      role: 'Mobile app developer',
+      asset: 'statoil_app',
       tags: ['android', 'java', 'android studio', 'scrum'],
     },
     {
@@ -434,6 +440,8 @@ export default {
         'A system to improve the planning and sorting of incoming and outgoing parcels for the Swedish postal service.',
       me:
         'Development with frontend responsibility to make sure the system was intuitive and easy to use. Held workshops with end users about how the interface should look like.',
+      role: 'Fronted developer',
+      asset: 'postal_service',
       tags: [
         'jsf',
         'richfaces',
