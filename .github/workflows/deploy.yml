@@ -1,4 +1,4 @@
-name: Build, Deploy, Lighthouse
+name: Smoke Test -> Lighthouse -> Build -> Deploy
 on:
   push:
     branches:
