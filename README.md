@@ -4,11 +4,19 @@ This is my personal resumé built with [React](https://reactjs.org), [Styled Sys
 
 ## Get started
 
-### `yarn start`
+### Local dev
+
+`$ yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `yarn build`
+### Production build
+
+`yarn build`
 
 Builds the app for production to the `build` folder.
+
+### Deploy
+
+Just push to GitHub and GitHub actions will run Smoke Test -> Lighthouse -> Build -> Deploy
