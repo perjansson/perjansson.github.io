@@ -42,11 +42,12 @@ const Text = styled.div`
     css`
       text-shadow: 0 0 0.25em ${glowColor};
     `}
-  ${({ textTransform, textDecoration, whiteSpace }) =>
+  ${({ textTransform, textDecoration, whiteSpace, cursor }) =>
     css`
       text-transform: ${textTransform};
       text-decoration: ${textDecoration};
       white-space: ${whiteSpace};
+      cursor: ${cursor};
     `}
   ${({ noSizeScale }) =>
     variant({

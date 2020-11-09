@@ -177,6 +177,7 @@ const HomePage = () => {
           href="#who am i"
           marginLeft={['20px', '40px', '60px']}
           marginBottom={['140px', '40px']}
+          data-cy="who-am-i-link"
         >
           Read more{' '}
           <span role="img" aria-label="point down">
@@ -184,8 +185,12 @@ const HomePage = () => {
           </span>
         </NavLink>
       </BackgroundBox>
-      <Section title="who am i" text={content.me.long} />
-      <Section title="get in contact">
+      <Section
+        title="who am i"
+        text={content.me.long}
+        data-cy="who-am-i-section"
+      />
+      <Section title="get in contact" data-cy="get-in-contact-section">
         <SectionBody scroll minHeight="50px" justifyContent="flex-start">
           {content.me.contacts.map(({ url, medium }, i) => (
             <Link
@@ -200,7 +205,7 @@ const HomePage = () => {
           ))}
         </SectionBody>
       </Section>
-      <Section title="what have i done">
+      <Section title="what have i done" data-cy="what-have-i-done-section">
         <Box
           display="flex"
           flexWrap="wrap"

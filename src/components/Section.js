@@ -6,8 +6,8 @@ import Box from './Box'
 import Header from './Header'
 import Text from './Text'
 
-export const Section = ({ title, text, children }) => (
-  <SectionBox id={title} paddingBottom={['20px', '40px', '60px']}>
+export const Section = ({ title, text, children, ...rest }) => (
+  <SectionBox id={title} paddingBottom={['20px', '40px', '60px']} {...rest}>
     {title && <SectionHeader>{title}</SectionHeader>}
     {text && <SectionBody text={text} />}
     {children}
