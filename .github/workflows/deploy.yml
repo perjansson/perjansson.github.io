@@ -1,4 +1,4 @@
-name: Smoke Test -> Lighthouse -> Build -> Deploy
+name: Continuous Integration
 on:
   push:
     branches:
