@@ -9,11 +9,7 @@ export const ContactSection = ({ contacts }) => (
   <Section title="get in contact" data-cy="get-in-contact-section">
     <SectionBody scroll minHeight="50px" justifyContent="flex-start">
       {contacts.map(({ url, medium }, i) => (
-        <Link
-          key={i}
-          whiteSpace="nowrap"
-          marginLeft={i === 0 ? ['20px', '40px', '60px'] : 0}
-        >
+        <Link key={i} whiteSpace="nowrap" marginLeft={['20px', '40px', '60px']}>
           <a href={url} target="_blank" rel="noopener noreferrer">
             {medium}
           </a>

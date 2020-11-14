@@ -35,7 +35,12 @@ const LandingPage = ({ onClick }) => {
         justifyContent="flex-end"
       >
         {showLink && (
-          <Link data-cy="enter-link" onClick={onClick} cursor="pointer">
+          <Link
+            data-cy="enter-link"
+            onClick={onClick}
+            cursor="pointer"
+            marginRight="40px"
+          >
             Click anywhere to enter...
           </Link>
         )}
