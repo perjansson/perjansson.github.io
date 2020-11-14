@@ -6,15 +6,16 @@ import { Box } from './Box'
 import { Header } from './Header'
 import { Text } from './Text'
 
-export const Section = ({ title, text, children, ...rest }) => (
-  <SectionBox id={title} paddingBottom={['20px', '40px', '60px']} {...rest}>
-    {title && <SectionHeader>{title}</SectionHeader>}
+export const Section = ({ id, title, text, children, ...rest }) => (
+  <SectionBox paddingBottom={['20px', '40px', '60px']} {...rest}>
+    {title && <SectionHeader id={id}>{title}</SectionHeader>}
     {text && <SectionBody text={text} />}
     {children}
   </SectionBox>
 )
 
 Section.propTypes = {
+  id: string.isRequired,
   title: string,
   text: string,
   children: any,

@@ -5,11 +5,11 @@ import { MeType } from '../types'
 import { SectionHeader } from './Section'
 import { BackgroundBox } from './BackgroundBox'
 import { Box } from './Box'
-import { Anchor, StyledLink } from './Link'
+import { Link, StyledLink } from './Link'
 
 export const ProfileSection = ({ me, onThemeChange }) => (
   <BackgroundBox asset="profile" height="100vh" justifyContent="space-between">
-    <SectionHeader maxWidth={['90%', '80%', '60%']}>
+    <SectionHeader id="home" maxWidth={['90%', '80%', '60%']}>
       {me.name}
       <br />
       {me.title}
@@ -21,8 +21,8 @@ export const ProfileSection = ({ me, onThemeChange }) => (
       alignItems="center"
       marginBottom={['140px', '40px']}
     >
-      <Anchor
-        url="#who am i"
+      <Link
+        to="/whoami"
         fadeIn
         data-cy="who-am-i-link"
         marginLeft={['20px', '40px', '60px']}
@@ -31,7 +31,7 @@ export const ProfileSection = ({ me, onThemeChange }) => (
           👇
         </span>{' '}
         Read more
-      </Anchor>
+      </Link>
       {onThemeChange && (
         <StyledLink
           onClick={onThemeChange}

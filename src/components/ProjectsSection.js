@@ -8,7 +8,11 @@ import { Text } from './Text'
 import { BackgroundBox } from './BackgroundBox'
 
 export const ProjectsSection = ({ projects }) => (
-  <Section title="what have i done" data-cy="what-have-i-done-section">
+  <Section
+    id="projects"
+    title="what have i done"
+    data-cy="what-have-i-done-section"
+  >
     <Box
       display="flex"
       flexWrap="wrap"
