@@ -7,17 +7,18 @@ import { ContactSection } from '../components/ContactSection'
 import { ProjectsSection } from '../components/ProjectsSection'
 
 const HomePage = () => {
-  // const onThemeChange = () => {
-  //   const elem = document.documentElement
-  //   elem.setAttribute(
-  //     'data-theme',
-  //     elem.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-  //   )
-  // }
+  const handleOnThemeChange = () => {
+    const elem = document.documentElement
+    const newThemeKey =
+      elem.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+
+    elem.setAttribute('data-theme', newThemeKey)
+    localStorage.setItem('theme', newThemeKey)
+  }
 
   return (
     <>
-      <ProfileSection me={content.me} />
+      <ProfileSection me={content.me} onThemeChange={handleOnThemeChange} />
       <WhoAmISection me={content.me} />
       <ContactSection contacts={content.me.contacts} />
       <ProjectsSection projects={content.projects} />

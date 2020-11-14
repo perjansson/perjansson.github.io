@@ -54,7 +54,7 @@ const ProjectBox = ({ project }) => (
             top="20px"
             left="20px"
             padding="10px"
-            bg="rgba(0,0,0,0.4)"
+            bg="var(--project-date-background-color)"
             borderRadius="10px"
             variant="xSmall"
             noSizeScale

@@ -7,6 +7,12 @@ import * as serviceWorker from './serviceWorker'
 
 smoothscroll.polyfill()
 
+// Initialize theme from local storage or default to dark
+document.documentElement.setAttribute(
+  'data-theme',
+  localStorage.getItem('theme') || 'dark'
+)
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

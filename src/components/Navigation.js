@@ -16,7 +16,7 @@ export const Nav = styled.nav`
 
 export const NavLink = ({ href, children, ...rest }) => (
   <a href={href}>
-    <Text variant="medium" color="var(--link-color)" fadeIn {...rest}>
+    <Text variant="medium" color="var(--link-color)" {...rest}>
       {children}
     </Text>
   </a>
