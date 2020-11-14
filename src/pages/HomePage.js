@@ -31,6 +31,14 @@ const BackgroundBox = styled(SectionBox)`
     (asset === 'profile' ? '_portrait' : '') +
     '.jpg)'};
 
+  @media (orientation: landscape) {
+    background-image: ${({ asset, gradientType }) =>
+      BackgroundGradient[gradientType] +
+      ', url(assets/' +
+      asset +
+      '_small.jpg)'};
+  }
+
   @media (min-width: 52em) and (orientation: landscape) {
     background-image: ${({ asset, gradientType }) =>
       BackgroundGradient[gradientType] +
