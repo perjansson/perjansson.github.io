@@ -4,9 +4,8 @@ import { func } from 'prop-types'
 import { MeType } from '../types'
 import { SectionHeader } from './Section'
 import { BackgroundBox } from './BackgroundBox'
-import { NavLink } from './Navigation'
 import { Box } from './Box'
-import { Link } from './Link'
+import { Anchor, StyledLink } from './Link'
 
 export const ProfileSection = ({ me, onThemeChange }) => (
   <BackgroundBox asset="profile" height="100vh" justifyContent="space-between">
@@ -22,8 +21,8 @@ export const ProfileSection = ({ me, onThemeChange }) => (
       alignItems="center"
       marginBottom={['140px', '40px']}
     >
-      <NavLink
-        href="#who am i"
+      <Anchor
+        url="#who am i"
         fadeIn
         data-cy="who-am-i-link"
         marginLeft={['20px', '40px', '60px']}
@@ -32,9 +31,9 @@ export const ProfileSection = ({ me, onThemeChange }) => (
           👇
         </span>{' '}
         Read more
-      </NavLink>
+      </Anchor>
       {onThemeChange && (
-        <Link
+        <StyledLink
           onClick={onThemeChange}
           fadeIn
           marginRight={['20px', '40px', '60px']}
@@ -44,7 +43,7 @@ export const ProfileSection = ({ me, onThemeChange }) => (
             🎨
           </span>{' '}
           Toggle theme
-        </Link>
+        </StyledLink>
       )}
     </Box>
   </BackgroundBox>

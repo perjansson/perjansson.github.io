@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { string, oneOf } from 'prop-types'
 
-import { Nav } from './Navigation'
 import { SectionBox } from './Section'
 
 const BackgroundGradient = {
@@ -64,18 +63,6 @@ export const BackgroundBox = styled(SectionBox)`
       asset === 'profile' ? 'scale(1.0)' : 'scale(1.0)'};
     z-index: 2;
     cursor: pointer;
-  }
-
-  ${Nav} {
-    margin-bottom: 50px;
-
-    > a {
-      margin-bottom: 5px;
-
-      @media (min-width: 52em) and (orientation: landscape) {
-        margin-bottom: 15px;
-      }
-    }
   }
 `
 

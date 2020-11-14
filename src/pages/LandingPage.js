@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { func } from 'prop-types'
+import { useNavigate } from '@reach/router'
 
 import content from '../content'
 import { Box } from '../components/Box'
 import { BlackMirror } from '../components/BlackMirror'
 import { Link } from '../components/Link'
 
-const LandingPage = ({ onClick }) => {
+const LandingPage = () => {
   const [showLink, setShowLink] = useState(false)
 
   useEffect(() => {
     const id = window.setTimeout(() => setShowLink(true), 3500)
     return () => window.clearTimeout(id)
   }, [])
+
+  const navigate = useNavigate()
 
   return (
     <>
@@ -22,7 +25,7 @@ const LandingPage = ({ onClick }) => {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        onClick={onClick}
+        onClick={() => navigate('home')}
         cursor="pointer"
       >
         <BlackMirror>{content.me.name}</BlackMirror>
@@ -36,8 +39,8 @@ const LandingPage = ({ onClick }) => {
       >
         {showLink && (
           <Link
+            to="home"
             data-cy="enter-link"
-            onClick={onClick}
             cursor="pointer"
             marginRight="40px"
           >

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import smoothscroll from 'smoothscroll-polyfill'
 
-import App from './App'
+import { App } from './App'
 import * as serviceWorker from './serviceWorker'
 
 smoothscroll.polyfill()
