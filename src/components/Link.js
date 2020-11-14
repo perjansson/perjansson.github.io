@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Text from '../components/Text'
+import { Text } from '../components/Text'
 import { fadeIn } from '../styles/animations'
 
 export const Link = styled(Text)`

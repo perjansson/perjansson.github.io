@@ -2,7 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from 'styled-components'
 
-import Text from './Text'
+import { Text } from './Text'
 import { crack1, crack2, shake } from '../styles/animations'
 
 const Header = styled.h1`
@@ -43,7 +43,7 @@ const Header = styled.h1`
   }
 `
 
-const BlackMirror = ({ children }) => (
+export const BlackMirror = ({ children }) => (
   <Text variant="xxxLarge" textAlign="center">
     <Header data-text={children}>
       <span>{children}</span>
@@ -54,5 +54,3 @@ const BlackMirror = ({ children }) => (
 BlackMirror.propTypes = {
   children: string,
 }
-
-export default BlackMirror

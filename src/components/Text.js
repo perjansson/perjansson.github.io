@@ -23,7 +23,7 @@ const VARIANTS_BASE = {
   xxLarge: 40,
 }
 
-const Text = styled.div`
+export const Text = styled.div`
   ${position}
   ${border}
   ${space}
@@ -111,5 +111,3 @@ Text.propTypes = {
 Text.defaultProps = {
   variant: 'medium',
 }
-
-export default Text

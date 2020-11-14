@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { func } from 'prop-types'
 
-import Box from '../components/Box'
-import BlackMirror from '../components/BlackMirror'
-
 import content from '../content'
+import { Box } from '../components/Box'
+import { BlackMirror } from '../components/BlackMirror'
 import { Link } from '../components/Link'
 
 const LandingPage = ({ onClick }) => {

@@ -1,10 +1,10 @@
 import React from 'react'
 import { any, bool, string } from 'prop-types'
 
-import Box from './Box'
-import Text, { TextVariant } from './Text'
+import { Box } from './Box'
+import { Text, TextVariant } from './Text'
 
-const Header = ({
+export const Header = ({
   children,
   contrast,
   glow,
@@ -53,5 +53,3 @@ Header.defaultProps = {
   textTransform: 'none',
   glow: true,
 }
-
-export default Header

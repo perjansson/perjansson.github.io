@@ -9,7 +9,7 @@ import {
   typography,
 } from 'styled-system'
 
-const Box = styled.div`
+export const Box = styled.div`
   ${position}
   ${border}
   ${space}
@@ -22,5 +22,3 @@ const Box = styled.div`
       cursor: ${cursor};
     `}
 `
-
-export default Box

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { layout, space } from 'styled-system'
 import { string, any } from 'prop-types'
 
-import Text from '../components/Text'
+import { Text } from '../components/Text'
 
 export const Nav = styled.nav`
   ${space}

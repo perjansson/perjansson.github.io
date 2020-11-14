@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { any, string, bool } from 'prop-types'
 
-import Box from './Box'
-import Header from './Header'
-import Text from './Text'
+import { Box } from './Box'
+import { Header } from './Header'
+import { Text } from './Text'
 
 export const Section = ({ title, text, children, ...rest }) => (
   <SectionBox id={title} paddingBottom={['20px', '40px', '60px']} {...rest}>
