@@ -11,6 +11,7 @@ export const Header = ({
   textVariant,
   textTransform,
   noSizeScale,
+  fadeIn,
   ...rest
 }) => {
   return (
@@ -31,7 +32,7 @@ export const Header = ({
               : 'var(--primary-header-contrast-glow-color)'
             : undefined
         }
-        fadeIn
+        fadeIn={fadeIn}
       >
         {children}
       </Text>
@@ -46,10 +47,12 @@ Header.propTypes = {
   textTransform: string,
   noSizeScale: bool,
   glow: bool,
+  fadeIn: bool,
 }
 
 Header.defaultProps = {
   textVariant: 'xxLarge',
   textTransform: 'none',
   glow: true,
+  fadeIn: true,
 }

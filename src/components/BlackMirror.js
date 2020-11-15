@@ -20,7 +20,6 @@ const Header = styled.h1`
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
-    -webkit-clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
     clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
   }
 

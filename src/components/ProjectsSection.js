@@ -1,38 +1,55 @@
-import React from 'react'
-import { arrayOf } from 'prop-types'
+import React, { useState } from 'react'
+import { arrayOf, func } from 'prop-types'
 
 import { ProjectType } from '../types'
 import { Section, SectionSubHeader } from './Section'
 import { Box } from './Box'
 import { Text } from './Text'
 import { BackgroundBox } from './BackgroundBox'
+import { Project } from './Project'
 
-export const ProjectsSection = ({ projects }) => (
-  <Section
-    id="projects"
-    title="what have i done"
-    data-cy="what-have-i-done-section"
-  >
-    <Box
-      display="flex"
-      flexWrap="wrap"
-      justifyContent="space-around"
-      marginTop={['10px', '20px', '30px']}
-      paddingLeft={['10px', '15px']}
-      paddingRight={['10px', '15px']}
-    >
-      {projects.map((project, i) => (
-        <ProjectBox key={i} project={project} />
-      ))}
-    </Box>
-  </Section>
-)
+export const ProjectsSection = ({ projects }) => {
+  const [selectedProject, setSelectedProject] = useState(undefined)
+
+  return (
+    <>
+      <Section
+        id="projects"
+        title="what have i done"
+        data-cy="what-have-i-done-section"
+      >
+        <Box
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="space-around"
+          marginTop={['10px', '20px', '30px']}
+          paddingLeft={['10px', '15px']}
+          paddingRight={['10px', '15px']}
+        >
+          {projects.map((project, i) => (
+            <ProjectBox
+              key={i}
+              project={project}
+              onSelectProject={() => setSelectedProject(project)}
+            />
+          ))}
+        </Box>
+      </Section>
+      {selectedProject && (
+        <Project
+          project={selectedProject}
+          onClose={() => setSelectedProject(undefined)}
+        />
+      )}
+    </>
+  )
+}
 
 ProjectsSection.propTypes = {
   projects: arrayOf(ProjectType).isRequired,
 }
 
-const ProjectBox = ({ project }) => (
+const ProjectBox = ({ project, onSelectProject }) => (
   <BackgroundBox
     key={project.title}
     gradientType="full"
@@ -50,6 +67,8 @@ const ProjectBox = ({ project }) => (
       justifyContent="center"
       alignItems="center"
       position="relative"
+      cursor="pointer"
+      onClick={onSelectProject}
     >
       <Box width="90%">
         {project.date && (
@@ -66,7 +85,7 @@ const ProjectBox = ({ project }) => (
             {project.date}
           </Text>
         )}
-        <SectionSubHeader textAlign="center" noSizeScale>
+        <SectionSubHeader textAlign="center" fadeIn={false} noSizeScale>
           {project.title}
         </SectionSubHeader>
         <Text
@@ -84,4 +103,5 @@ const ProjectBox = ({ project }) => (
 
 ProjectBox.propTypes = {
   project: ProjectType.isRequired,
+  onSelectProject: func,
 }

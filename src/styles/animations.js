@@ -58,3 +58,16 @@ export const crack2 = keyframes`
     transform: translate(-49%, -53%);
   }
 `
+
+export const puffIn = keyframes`
+  0% {
+    transform: scale(0);
+    filter: blur(40px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }`
