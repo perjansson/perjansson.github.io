@@ -24,7 +24,6 @@ export const Project = ({ project, onClose }) => {
 
   return (
     <AnimateInBox
-      height="100%"
       width="100%"
       overflow="scroll"
       display="flex"
@@ -41,6 +40,7 @@ export const Project = ({ project, onClose }) => {
     >
       <Box
         width="100%"
+        minHeight="185px"
         display="flex"
         justifyContent="space-between"
         alignItems="flex-start"
