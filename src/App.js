@@ -3,7 +3,6 @@ import { Redirect, Router } from '@reach/router'
 
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
-import { ScrollOnNav } from './components/ScrollOnNav'
 import ProjectPage from './pages/ProjectPage'
 
 export const App = () => {
