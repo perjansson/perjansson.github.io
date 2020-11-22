@@ -41,9 +41,9 @@ export default {
     long:
       'I’m a <span class="focus">curious software developer</span> with a passion to build great stuff and support others to do the same. My core skills are in <span class="focus">full-stack web development</span> and, although I’m no stranger to backend, I’ve always been drawn to the <span class="focus">frontend</span> side. I like the things that are visual and that a user interacts with and I have many years of experience in how to build systems and applications that are a <span class="focus">good mix of quality, robustness and ease of use</span>. I really enjoy working with <span class="focus">Node, React, React-Native and JavaScript</span> in general, but I also have done a lot of Java previously together with both Android och iOS development. I addition to that I also like the architectural part of how a solid frontend is created together with making the <span class="focus">Developer Experience</span> really good for the current team so it’s a joy to work with.<br/><br/>I love helping teams become <span class="focus">more efficient</span> by supporting the establishment of great practices for <span class="focus">agile product development</span> methods with a focus on teamwork and organizing the work. I have experience in <span class="focus">team leadership and coaching</span> activities within the agile way of delivering software and I strive to be a person who gets others to grow, the team to achieve more, and to <span class="focus">maximize the value for the end-user</span> and the client.',
   },
-
   projects: [
     {
+      id: 21,
       title: 'Panasonic Avionics Corporation',
       description:
         'Platform to enable airplane passengers to attain wireless internet connectivity.',
@@ -71,6 +71,7 @@ export default {
       ],
     },
     {
+      id: 20,
       title: 'HBO GO app',
       description:
         'HBO GO client in US for TV platforms: Samsung Orsay, TiVo set-top box and Hotels (LG and Enseo devices). A web application using HTML, CSS, and TypeScript. Frameworks and libraries used are React, Redux, Styled Components and Ramda. It is built using Grunt and Browserify.',
@@ -95,6 +96,7 @@ export default {
       ],
     },
     {
+      id: 19,
       title: 'Unibet Frontend for Kindred Group',
       description:
         'Several different betting websites built using web technologies and using configuration of a headless CMS to create the final experience for the client.',
@@ -128,6 +130,7 @@ export default {
       ],
     },
     {
+      id: 18,
       title: 'Insourcing Matchmaking Tool for EY',
       description:
         'A web application that act as a matchmaking tool to find the best candidate of insourced consultants and employees for a given client and project. Also a back-office module for administrators and consultants to manage their skills, CVs, personal video, details etc.',
@@ -162,6 +165,7 @@ export default {
       ],
     },
     {
+      id: 17,
       title: 'New Admin web for Leadenhancer',
       description:
         'Web application for back office of company that bridges the gap between known and anonymous web visitors by identifying and segmenting the companies visiting a website, and providing detailed, targetable business attributes in real-time.',
@@ -182,6 +186,7 @@ export default {
       ],
     },
     {
+      id: 16,
       title: 'Digitalization and Advisory Cockpit Tool for Nordea Bank',
       description:
         "Advisory Cockpit Tool to be used by advisors and help digitize an advisor's everyday. The bar was set very high and the application should not only contain a lot of functionality to simplify the days of an advisor, but the end result will also be a great user experience.",
@@ -222,6 +227,7 @@ export default {
       ],
     },
     {
+      id: 15,
       title: 'Mindmend prototype',
       description: 'A prototype for a digital platform for KBT treatment.',
       me:
@@ -245,6 +251,7 @@ export default {
       ],
     },
     {
+      id: 14,
       title: 'Nordic portfolio system for Nordea Bank',
       description:
         'A brand new back office solution along with enhancing and introducing an existing portfolio system in the Nordic countries',
@@ -291,6 +298,7 @@ export default {
       ],
     },
     {
+      id: 13,
       title: 'Risk Calculator for Nordea Bank',
       description:
         "A system for calculating risk and return, both based on a customer's current portfolio but also on a better allocated portfolio that will be recommended to the customer.",
@@ -325,6 +333,7 @@ export default {
       ],
     },
     {
+      id: 12,
       title: 'Multi portfolio for Nordea Bank',
       description:
         "Portfolio analysis system extended to support structuring a customer's total engagement in different portfolios to be able to twist and turn the customers current assets.",
@@ -355,6 +364,7 @@ export default {
       ],
     },
     {
+      id: 11,
       title: 'Customized analysis and recommendation for Nordea Bank',
       description:
         "A system for doing customized analysis, optimization and recommendation of customer's current portfolio to be able to recommend a better portfolio that can give a higher return with a lower risk. <a href='https://medium.com/@perjansson/offshoring-from-the-scream-to-friendship-and-success-5b409c30d287' target='_blank' rel='noopener noreferrer'>Blog post about project on Medium</a>.",
@@ -385,6 +395,7 @@ export default {
       ],
     },
     {
+      id: 10,
       title: 'Portfolio for advisors for Nordea Bank',
       description:
         'A web application for advisors to use when doing analysis of a customers holdings, for instance asset allocation, current and previous holdings, transactions, performance and profit and loss. <a href="https://medium.com/@perjansson/how-we-invented-and-introduced-drama-driven-demo-9cc564bc741f" target="_blank" rel="noopener noreferrer">Blog post about project on Medium</a>.',
@@ -415,6 +426,7 @@ export default {
       ],
     },
     {
+      id: 9,
       title: 'App on Android for Swedish Pharmacy',
       description:
         'An Android app to view the current pollen level at a given location as well as recommended treatments and view closest pharmacy.',
@@ -425,6 +437,7 @@ export default {
       tags: ['android', 'java', 'android studio', 'scrum'],
     },
     {
+      id: 8,
       title: 'App on Android for Statoil',
       description:
         'An Android app to view the closest Statoil gas station as well as book trailers, vans etc.',
@@ -435,6 +448,7 @@ export default {
       tags: ['android', 'java', 'android studio', 'scrum'],
     },
     {
+      id: 7,
       title: 'Planning and sorting system for Swedish Postal Service',
       description:
         'A system to improve the planning and sorting of incoming and outgoing parcels for the Swedish postal service.',
@@ -463,6 +477,7 @@ export default {
       ],
     },
     {
+      id: 6,
       title: 'Automatic Payments for Länsförsäkringar Bank',
       description:
         'Change several existing bank systems to make sure they worked after a backend system for automatic payments was updated.',
@@ -485,6 +500,7 @@ export default {
       ],
     },
     {
+      id: 5,
       title: 'Proof Of Concept new Internet bank for SEB (Bank)',
       description:
         'A Proof of concept application to prove that a current internet banking solution could be modified to work for another bank.',
@@ -509,6 +525,7 @@ export default {
       ],
     },
     {
+      id: 4,
       title: 'New Internet Bank for Länsförsäkringar Bank',
       description:
         'Build a new shiny internet bank with new technologies, frameworks and most importantly new functionality. ',
@@ -535,6 +552,7 @@ export default {
       ],
     },
     {
+      id: 3,
       title: 'Change bank application for Länsförsäkringar Bank',
       description:
         'A system to support bank officers help new customers move all of their existing engagement from other banks to Länsförsäkringar Bank.',
@@ -560,6 +578,7 @@ export default {
       ],
     },
     {
+      id: 2,
       title: 'Bank officers secure communication for Länsförsäkringar Bank',
       description:
         'a system to enable a secure communication channel between bank officers and bank customers via the internet bank and an internal bank officer application.',
@@ -581,6 +600,7 @@ export default {
       ],
     },
     {
+      id: 1,
       title: 'Internet bank for SEB (Bank) in Germany',
       description: 'A new internet bank for SEB in Germany.',
       me: 'Developer with fullstack responsibility.',

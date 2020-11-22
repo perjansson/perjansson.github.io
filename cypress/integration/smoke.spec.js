@@ -9,7 +9,7 @@ describe('Smoke test', () => {
     cy.get('body').contains(content.me.name)
     cy.get('body').contains(content.me.title)
 
-    cy.get('[data-cy=who-am-i-link]').click()
+    cy.get('[data-cy=who-am-i-section').scrollIntoView()
     cy.get('[data-cy=who-am-i-section]').contains('curious software developer')
 
     cy.get('[data-cy=get-in-contact-section').scrollIntoView()

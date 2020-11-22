@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { navigate } from '@reach/router'
 import { arrayOf, func } from 'prop-types'
 
 import { ProjectType } from '../types'
@@ -6,44 +7,31 @@ import { Section, SectionSubHeader } from './Section'
 import { Box } from './Box'
 import { Text } from './Text'
 import { BackgroundBox } from './BackgroundBox'
-import { Project } from './Project'
 
-export const ProjectsSection = ({ projects }) => {
-  const [selectedProject, setSelectedProject] = useState(undefined)
-
-  return (
-    <>
-      <Section
-        id="projects"
-        title="what have i done"
-        data-cy="what-have-i-done-section"
-      >
-        <Box
-          display="flex"
-          flexWrap="wrap"
-          justifyContent="space-around"
-          marginTop={['10px', '20px', '30px']}
-          paddingLeft={['10px', '15px']}
-          paddingRight={['10px', '15px']}
-        >
-          {projects.map((project, i) => (
-            <ProjectBox
-              key={i}
-              project={project}
-              onSelectProject={() => setSelectedProject(project)}
-            />
-          ))}
-        </Box>
-      </Section>
-      {selectedProject && (
-        <Project
-          project={selectedProject}
-          onClose={() => setSelectedProject(undefined)}
+export const ProjectsSection = ({ projects }) => (
+  <Section
+    id="projects"
+    title="what have i done"
+    data-cy="what-have-i-done-section"
+  >
+    <Box
+      display="flex"
+      flexWrap="wrap"
+      justifyContent="space-around"
+      marginTop={['10px', '20px', '30px']}
+      paddingLeft={['10px', '15px']}
+      paddingRight={['10px', '15px']}
+    >
+      {projects.map(project => (
+        <ProjectBox
+          key={project.id}
+          project={project}
+          onSelectProject={() => navigate(`/projects/${project.id}`)}
         />
-      )}
-    </>
-  )
-}
+      ))}
+    </Box>
+  </Section>
+)
 
 ProjectsSection.propTypes = {
   projects: arrayOf(ProjectType).isRequired,

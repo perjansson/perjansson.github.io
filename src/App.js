@@ -4,6 +4,7 @@ import { Redirect, Router } from '@reach/router'
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
 import { ScrollOnNav } from './components/ScrollOnNav'
+import ProjectPage from './pages/ProjectPage'
 
 export const App = () => {
   const handleOnThemeChange = () => {
@@ -17,11 +18,10 @@ export const App = () => {
 
   return (
     <>
-      <ScrollOnNav />
       <Router style={{ height: '100%' }}>
         <LandingPage path="/" />
         <HomePage path="home" onThemeChange={handleOnThemeChange} />
-        <HomePage path="whoami" onThemeChange={handleOnThemeChange} />
+        <ProjectPage path="projects/:projectId" />
         <Redirect from="/" to="/" default noThrow />
       </Router>
     </>
