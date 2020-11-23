@@ -69,7 +69,6 @@ export const BackgroundBox = styled(SectionBox)`
     opacity: 1;
     transform: ${({ cover }) => (cover ? 'scale(1.0)' : 'scale(1.0)')};
     z-index: 2;
-    cursor: pointer;
   }
 `
 
