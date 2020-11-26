@@ -1,4 +1,4 @@
-# My resumé:
+# My personal resumé website
 
 This is my personal resumé built with [React](https://reactjs.org), [Styled System](https://styled-system.com) and [styled-components](https://styled-components.com) located on [GitHub Pages](https://perjansson.github.io).
 
